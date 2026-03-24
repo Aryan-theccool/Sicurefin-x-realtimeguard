@@ -3,6 +3,9 @@
     "[project]/SecureFin/app/_not-found/page": [
       "static/media/caa3a2e1cccd8315-s.p.853070df.woff2"
     ],
+    "[project]/SecureFin/app/about/page": [
+      "static/media/caa3a2e1cccd8315-s.p.853070df.woff2"
+    ],
     "[project]/SecureFin/app/dashboard/page": [
       "static/media/caa3a2e1cccd8315-s.p.853070df.woff2"
     ],
@@ -10,9 +13,6 @@
       "static/media/caa3a2e1cccd8315-s.p.853070df.woff2"
     ],
     "[project]/SecureFin/app/realtime-guard/page": [
-      "static/media/caa3a2e1cccd8315-s.p.853070df.woff2"
-    ],
-    "[project]/SecureFin/app/wallet/page": [
       "static/media/caa3a2e1cccd8315-s.p.853070df.woff2"
     ]
   },

@@ -130,7 +130,7 @@ function LiveFeed({ transactions, onSelect }) {
                                             children: "◈"
                                         }, void 0, false, {
                                             fileName: "[project]/SecureFin/components/realtime-guard/live-feed.tsx",
-                                            lineNumber: 35,
+                                            lineNumber: 34,
                                             columnNumber: 33
                                         }, this),
                                         " ",
@@ -138,7 +138,7 @@ function LiveFeed({ transactions, onSelect }) {
                                     ]
                                 }, void 0, true, {
                                     fileName: "[project]/SecureFin/components/realtime-guard/live-feed.tsx",
-                                    lineNumber: 34,
+                                    lineNumber: 33,
                                     columnNumber: 29
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$SecureFin$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
@@ -146,13 +146,13 @@ function LiveFeed({ transactions, onSelect }) {
                                     children: tx.fraud_score > 80 ? '!! THREAT !!' : 'SECURE'
                                 }, void 0, false, {
                                     fileName: "[project]/SecureFin/components/realtime-guard/live-feed.tsx",
-                                    lineNumber: 37,
+                                    lineNumber: 36,
                                     columnNumber: 29
                                 }, this)
                             ]
                         }, void 0, true, {
                             fileName: "[project]/SecureFin/components/realtime-guard/live-feed.tsx",
-                            lineNumber: 33,
+                            lineNumber: 32,
                             columnNumber: 25
                         }, this),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$SecureFin$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -163,7 +163,7 @@ function LiveFeed({ transactions, onSelect }) {
                                     children: tx.merchant
                                 }, void 0, false, {
                                     fileName: "[project]/SecureFin/components/realtime-guard/live-feed.tsx",
-                                    lineNumber: 42,
+                                    lineNumber: 41,
                                     columnNumber: 29
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$SecureFin$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
@@ -174,29 +174,29 @@ function LiveFeed({ transactions, onSelect }) {
                                     ]
                                 }, void 0, true, {
                                     fileName: "[project]/SecureFin/components/realtime-guard/live-feed.tsx",
-                                    lineNumber: 43,
+                                    lineNumber: 42,
                                     columnNumber: 29
                                 }, this)
                             ]
                         }, void 0, true, {
                             fileName: "[project]/SecureFin/components/realtime-guard/live-feed.tsx",
-                            lineNumber: 41,
+                            lineNumber: 40,
                             columnNumber: 25
                         }, this)
                     ]
                 }, tx.id, true, {
                     fileName: "[project]/SecureFin/components/realtime-guard/live-feed.tsx",
-                    lineNumber: 24,
+                    lineNumber: 23,
                     columnNumber: 21
                 }, this))
         }, void 0, false, {
             fileName: "[project]/SecureFin/components/realtime-guard/live-feed.tsx",
-            lineNumber: 22,
+            lineNumber: 21,
             columnNumber: 13
         }, this)
     }, void 0, false, {
         fileName: "[project]/SecureFin/components/realtime-guard/live-feed.tsx",
-        lineNumber: 21,
+        lineNumber: 20,
         columnNumber: 9
     }, this);
 }
@@ -405,12 +405,12 @@ function TamperModal({ isOpen, onClose, data }) {
                                         size: 24
                                     }, void 0, false, {
                                         fileName: "[project]/SecureFin/components/realtime-guard/tamper-modal.tsx",
-                                        lineNumber: 25,
+                                        lineNumber: 24,
                                         columnNumber: 33
                                     }, this)
                                 }, void 0, false, {
                                     fileName: "[project]/SecureFin/components/realtime-guard/tamper-modal.tsx",
-                                    lineNumber: 24,
+                                    lineNumber: 23,
                                     columnNumber: 29
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$SecureFin$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -420,7 +420,7 @@ function TamperModal({ isOpen, onClose, data }) {
                                             children: "Security Alert: Chain Integrity Compromised"
                                         }, void 0, false, {
                                             fileName: "[project]/SecureFin/components/realtime-guard/tamper-modal.tsx",
-                                            lineNumber: 28,
+                                            lineNumber: 27,
                                             columnNumber: 33
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$SecureFin$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -431,29 +431,29 @@ function TamperModal({ isOpen, onClose, data }) {
                                             ]
                                         }, void 0, true, {
                                             fileName: "[project]/SecureFin/components/realtime-guard/tamper-modal.tsx",
-                                            lineNumber: 29,
+                                            lineNumber: 28,
                                             columnNumber: 33
                                         }, this)
                                     ]
                                 }, void 0, true, {
                                     fileName: "[project]/SecureFin/components/realtime-guard/tamper-modal.tsx",
-                                    lineNumber: 27,
+                                    lineNumber: 26,
                                     columnNumber: 29
                                 }, this)
                             ]
                         }, void 0, true, {
                             fileName: "[project]/SecureFin/components/realtime-guard/tamper-modal.tsx",
-                            lineNumber: 23,
+                            lineNumber: 22,
                             columnNumber: 25
                         }, this)
                     }, void 0, false, {
                         fileName: "[project]/SecureFin/components/realtime-guard/tamper-modal.tsx",
-                        lineNumber: 22,
+                        lineNumber: 21,
                         columnNumber: 21
                     }, this)
                 }, void 0, false, {
                     fileName: "[project]/SecureFin/components/realtime-guard/tamper-modal.tsx",
-                    lineNumber: 21,
+                    lineNumber: 20,
                     columnNumber: 17
                 }, this),
                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$SecureFin$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -475,7 +475,7 @@ function TamperModal({ isOpen, onClose, data }) {
                                             ]
                                         }, void 0, true, {
                                             fileName: "[project]/SecureFin/components/realtime-guard/tamper-modal.tsx",
-                                            lineNumber: 43,
+                                            lineNumber: 42,
                                             columnNumber: 37
                                         }, this),
                                         error,
@@ -484,7 +484,7 @@ function TamperModal({ isOpen, onClose, data }) {
                                     ]
                                 }, void 0, true, {
                                     fileName: "[project]/SecureFin/components/realtime-guard/tamper-modal.tsx",
-                                    lineNumber: 42,
+                                    lineNumber: 41,
                                     columnNumber: 33
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$SecureFin$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -500,14 +500,14 @@ function TamperModal({ isOpen, onClose, data }) {
                                                             size: 12
                                                         }, void 0, false, {
                                                             fileName: "[project]/SecureFin/components/realtime-guard/tamper-modal.tsx",
-                                                            lineNumber: 50,
+                                                            lineNumber: 49,
                                                             columnNumber: 45
                                                         }, this),
                                                         " Transaction Payload"
                                                     ]
                                                 }, void 0, true, {
                                                     fileName: "[project]/SecureFin/components/realtime-guard/tamper-modal.tsx",
-                                                    lineNumber: 49,
+                                                    lineNumber: 48,
                                                     columnNumber: 41
                                                 }, this),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$SecureFin$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -521,7 +521,7 @@ function TamperModal({ isOpen, onClose, data }) {
                                                             ]
                                                         }, void 0, true, {
                                                             fileName: "[project]/SecureFin/components/realtime-guard/tamper-modal.tsx",
-                                                            lineNumber: 53,
+                                                            lineNumber: 52,
                                                             columnNumber: 45
                                                         }, this),
                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$SecureFin$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -532,7 +532,7 @@ function TamperModal({ isOpen, onClose, data }) {
                                                             ]
                                                         }, void 0, true, {
                                                             fileName: "[project]/SecureFin/components/realtime-guard/tamper-modal.tsx",
-                                                            lineNumber: 56,
+                                                            lineNumber: 55,
                                                             columnNumber: 45
                                                         }, this),
                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$SecureFin$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -543,19 +543,19 @@ function TamperModal({ isOpen, onClose, data }) {
                                                             ]
                                                         }, void 0, true, {
                                                             fileName: "[project]/SecureFin/components/realtime-guard/tamper-modal.tsx",
-                                                            lineNumber: 59,
+                                                            lineNumber: 58,
                                                             columnNumber: 45
                                                         }, this)
                                                     ]
                                                 }, void 0, true, {
                                                     fileName: "[project]/SecureFin/components/realtime-guard/tamper-modal.tsx",
-                                                    lineNumber: 52,
+                                                    lineNumber: 51,
                                                     columnNumber: 41
                                                 }, this)
                                             ]
                                         }, void 0, true, {
                                             fileName: "[project]/SecureFin/components/realtime-guard/tamper-modal.tsx",
-                                            lineNumber: 48,
+                                            lineNumber: 47,
                                             columnNumber: 37
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$SecureFin$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -568,14 +568,14 @@ function TamperModal({ isOpen, onClose, data }) {
                                                             size: 12
                                                         }, void 0, false, {
                                                             fileName: "[project]/SecureFin/components/realtime-guard/tamper-modal.tsx",
-                                                            lineNumber: 67,
+                                                            lineNumber: 66,
                                                             columnNumber: 45
                                                         }, this),
                                                         " Digital Signature"
                                                     ]
                                                 }, void 0, true, {
                                                     fileName: "[project]/SecureFin/components/realtime-guard/tamper-modal.tsx",
-                                                    lineNumber: 66,
+                                                    lineNumber: 65,
                                                     columnNumber: 41
                                                 }, this),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$SecureFin$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -589,7 +589,7 @@ function TamperModal({ isOpen, onClose, data }) {
                                                             ]
                                                         }, void 0, true, {
                                                             fileName: "[project]/SecureFin/components/realtime-guard/tamper-modal.tsx",
-                                                            lineNumber: 70,
+                                                            lineNumber: 69,
                                                             columnNumber: 45
                                                         }, this),
                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$SecureFin$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -600,25 +600,25 @@ function TamperModal({ isOpen, onClose, data }) {
                                                             ]
                                                         }, void 0, true, {
                                                             fileName: "[project]/SecureFin/components/realtime-guard/tamper-modal.tsx",
-                                                            lineNumber: 73,
+                                                            lineNumber: 72,
                                                             columnNumber: 45
                                                         }, this)
                                                     ]
                                                 }, void 0, true, {
                                                     fileName: "[project]/SecureFin/components/realtime-guard/tamper-modal.tsx",
-                                                    lineNumber: 69,
+                                                    lineNumber: 68,
                                                     columnNumber: 41
                                                 }, this)
                                             ]
                                         }, void 0, true, {
                                             fileName: "[project]/SecureFin/components/realtime-guard/tamper-modal.tsx",
-                                            lineNumber: 65,
+                                            lineNumber: 64,
                                             columnNumber: 37
                                         }, this)
                                     ]
                                 }, void 0, true, {
                                     fileName: "[project]/SecureFin/components/realtime-guard/tamper-modal.tsx",
-                                    lineNumber: 47,
+                                    lineNumber: 46,
                                     columnNumber: 33
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$SecureFin$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -631,14 +631,14 @@ function TamperModal({ isOpen, onClose, data }) {
                                                     size: 12
                                                 }, void 0, false, {
                                                     fileName: "[project]/SecureFin/components/realtime-guard/tamper-modal.tsx",
-                                                    lineNumber: 82,
+                                                    lineNumber: 81,
                                                     columnNumber: 41
                                                 }, this),
                                                 " Signer Forensics"
                                             ]
                                         }, void 0, true, {
                                             fileName: "[project]/SecureFin/components/realtime-guard/tamper-modal.tsx",
-                                            lineNumber: 81,
+                                            lineNumber: 80,
                                             columnNumber: 37
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$SecureFin$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -655,7 +655,7 @@ function TamperModal({ isOpen, onClose, data }) {
                                                                     children: "Timestamp"
                                                                 }, void 0, false, {
                                                                     fileName: "[project]/SecureFin/components/realtime-guard/tamper-modal.tsx",
-                                                                    lineNumber: 88,
+                                                                    lineNumber: 87,
                                                                     columnNumber: 53
                                                                 }, this),
                                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$SecureFin$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("th", {
@@ -663,7 +663,7 @@ function TamperModal({ isOpen, onClose, data }) {
                                                                     children: "Action"
                                                                 }, void 0, false, {
                                                                     fileName: "[project]/SecureFin/components/realtime-guard/tamper-modal.tsx",
-                                                                    lineNumber: 89,
+                                                                    lineNumber: 88,
                                                                     columnNumber: 53
                                                                 }, this),
                                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$SecureFin$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("th", {
@@ -671,18 +671,18 @@ function TamperModal({ isOpen, onClose, data }) {
                                                                     children: "Tx ID"
                                                                 }, void 0, false, {
                                                                     fileName: "[project]/SecureFin/components/realtime-guard/tamper-modal.tsx",
-                                                                    lineNumber: 90,
+                                                                    lineNumber: 89,
                                                                     columnNumber: 53
                                                                 }, this)
                                                             ]
                                                         }, void 0, true, {
                                                             fileName: "[project]/SecureFin/components/realtime-guard/tamper-modal.tsx",
-                                                            lineNumber: 87,
+                                                            lineNumber: 86,
                                                             columnNumber: 49
                                                         }, this)
                                                     }, void 0, false, {
                                                         fileName: "[project]/SecureFin/components/realtime-guard/tamper-modal.tsx",
-                                                        lineNumber: 86,
+                                                        lineNumber: 85,
                                                         columnNumber: 45
                                                     }, this),
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$SecureFin$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("tbody", {
@@ -695,7 +695,7 @@ function TamperModal({ isOpen, onClose, data }) {
                                                                         children: new Date(h.timestamp).toLocaleString()
                                                                     }, void 0, false, {
                                                                         fileName: "[project]/SecureFin/components/realtime-guard/tamper-modal.tsx",
-                                                                        lineNumber: 96,
+                                                                        lineNumber: 95,
                                                                         columnNumber: 57
                                                                     }, this),
                                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$SecureFin$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("td", {
@@ -703,7 +703,7 @@ function TamperModal({ isOpen, onClose, data }) {
                                                                         children: h.action
                                                                     }, void 0, false, {
                                                                         fileName: "[project]/SecureFin/components/realtime-guard/tamper-modal.tsx",
-                                                                        lineNumber: 97,
+                                                                        lineNumber: 96,
                                                                         columnNumber: 57
                                                                     }, this),
                                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$SecureFin$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("td", {
@@ -711,58 +711,58 @@ function TamperModal({ isOpen, onClose, data }) {
                                                                         children: h.id
                                                                     }, void 0, false, {
                                                                         fileName: "[project]/SecureFin/components/realtime-guard/tamper-modal.tsx",
-                                                                        lineNumber: 98,
+                                                                        lineNumber: 97,
                                                                         columnNumber: 57
                                                                     }, this)
                                                                 ]
                                                             }, i, true, {
                                                                 fileName: "[project]/SecureFin/components/realtime-guard/tamper-modal.tsx",
-                                                                lineNumber: 95,
+                                                                lineNumber: 94,
                                                                 columnNumber: 53
                                                             }, this))
                                                     }, void 0, false, {
                                                         fileName: "[project]/SecureFin/components/realtime-guard/tamper-modal.tsx",
-                                                        lineNumber: 93,
+                                                        lineNumber: 92,
                                                         columnNumber: 45
                                                     }, this)
                                                 ]
                                             }, void 0, true, {
                                                 fileName: "[project]/SecureFin/components/realtime-guard/tamper-modal.tsx",
-                                                lineNumber: 85,
+                                                lineNumber: 84,
                                                 columnNumber: 41
                                             }, this)
                                         }, void 0, false, {
                                             fileName: "[project]/SecureFin/components/realtime-guard/tamper-modal.tsx",
-                                            lineNumber: 84,
+                                            lineNumber: 83,
                                             columnNumber: 37
                                         }, this)
                                     ]
                                 }, void 0, true, {
                                     fileName: "[project]/SecureFin/components/realtime-guard/tamper-modal.tsx",
-                                    lineNumber: 80,
+                                    lineNumber: 79,
                                     columnNumber: 33
                                 }, this)
                             ]
                         }, index, true, {
                             fileName: "[project]/SecureFin/components/realtime-guard/tamper-modal.tsx",
-                            lineNumber: 41,
+                            lineNumber: 40,
                             columnNumber: 29
                         }, this);
                     })
                 }, void 0, false, {
                     fileName: "[project]/SecureFin/components/realtime-guard/tamper-modal.tsx",
-                    lineNumber: 35,
+                    lineNumber: 34,
                     columnNumber: 17
                 }, this)
             ]
         }, void 0, true, {
             fileName: "[project]/SecureFin/components/realtime-guard/tamper-modal.tsx",
-            lineNumber: 20,
+            lineNumber: 19,
             columnNumber: 13
         }, this)
     }, void 0, false, {
         fileName: "[project]/SecureFin/components/realtime-guard/tamper-modal.tsx",
-        lineNumber: 19,
+        lineNumber: 18,
         columnNumber: 9
     }, this);
 }
