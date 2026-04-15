@@ -344,13 +344,15 @@ var __TURBOPACK__imported__module__$5b$project$5d2f$SecureFin$2f$node_modules$2f
 var __TURBOPACK__imported__module__$5b$project$5d2f$SecureFin$2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$history$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__$3c$export__default__as__History$3e$__ = __turbopack_context__.i("[project]/SecureFin/node_modules/lucide-react/dist/esm/icons/history.js [app-ssr] (ecmascript) <export default as History>");
 var __TURBOPACK__imported__module__$5b$project$5d2f$SecureFin$2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$user$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__$3c$export__default__as__User$3e$__ = __turbopack_context__.i("[project]/SecureFin/node_modules/lucide-react/dist/esm/icons/user.js [app-ssr] (ecmascript) <export default as User>");
 var __TURBOPACK__imported__module__$5b$project$5d2f$SecureFin$2f$components$2f$ui$2f$dialog$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/SecureFin/components/ui/dialog.tsx [app-ssr] (ecmascript)");
+var __TURBOPACK__imported__module__$5b$project$5d2f$SecureFin$2f$components$2f$ui$2f$button$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/SecureFin/components/ui/button.tsx [app-ssr] (ecmascript)");
 "use client";
 ;
 ;
 ;
-function TamperModal({ isOpen, onClose, data }) {
-    if (!data) return null;
-    const { errors } = data;
+;
+function TamperModal({ isOpen, onClose, onRepair, data }) {
+    if (!data || !data.errors) return null;
+    const errors = Array.isArray(data.errors) ? data.errors : [];
     return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$SecureFin$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$SecureFin$2f$components$2f$ui$2f$dialog$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["Dialog"], {
         open: isOpen,
         onOpenChange: (open)=>!open && onClose(),
@@ -360,72 +362,86 @@ function TamperModal({ isOpen, onClose, data }) {
                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$SecureFin$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$SecureFin$2f$components$2f$ui$2f$dialog$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["DialogHeader"], {
                     className: "bg-red-500/10 p-6 -m-6 mb-6 border-b border-red-500/30",
                     children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$SecureFin$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                        className: "flex justify-between items-center pr-8",
-                        children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$SecureFin$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                            className: "flex items-center gap-3",
-                            children: [
-                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$SecureFin$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                    className: "p-2 bg-red-500/20 rounded-full text-red-500",
-                                    children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$SecureFin$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$SecureFin$2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$shield$2d$alert$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__$3c$export__default__as__ShieldAlert$3e$__["ShieldAlert"], {
-                                        size: 24
-                                    }, void 0, false, {
-                                        fileName: "[project]/SecureFin/components/realtime-guard/tamper-modal.tsx",
-                                        lineNumber: 24,
-                                        columnNumber: 33
-                                    }, this)
-                                }, void 0, false, {
-                                    fileName: "[project]/SecureFin/components/realtime-guard/tamper-modal.tsx",
-                                    lineNumber: 23,
-                                    columnNumber: 29
-                                }, this),
-                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$SecureFin$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                    children: [
-                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$SecureFin$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$SecureFin$2f$components$2f$ui$2f$dialog$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["DialogTitle"], {
-                                            className: "text-xl font-bold text-white uppercase tracking-tight",
-                                            children: "Security Alert: Chain Integrity Compromised"
+                        className: "flex justify-between items-center pr-8 w-full",
+                        children: [
+                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$SecureFin$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                className: "flex items-center gap-3",
+                                children: [
+                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$SecureFin$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                        className: "p-2 bg-red-500/20 rounded-full text-red-500",
+                                        children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$SecureFin$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$SecureFin$2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$shield$2d$alert$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__$3c$export__default__as__ShieldAlert$3e$__["ShieldAlert"], {
+                                            size: 24
                                         }, void 0, false, {
                                             fileName: "[project]/SecureFin/components/realtime-guard/tamper-modal.tsx",
-                                            lineNumber: 27,
-                                            columnNumber: 33
-                                        }, this),
-                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$SecureFin$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
-                                            className: "text-red-400 text-sm font-mono",
-                                            children: [
-                                                errors.length,
-                                                " Tampered Block(s) Detected"
-                                            ]
-                                        }, void 0, true, {
-                                            fileName: "[project]/SecureFin/components/realtime-guard/tamper-modal.tsx",
-                                            lineNumber: 28,
+                                            lineNumber: 26,
                                             columnNumber: 33
                                         }, this)
-                                    ]
-                                }, void 0, true, {
-                                    fileName: "[project]/SecureFin/components/realtime-guard/tamper-modal.tsx",
-                                    lineNumber: 26,
-                                    columnNumber: 29
-                                }, this)
-                            ]
-                        }, void 0, true, {
-                            fileName: "[project]/SecureFin/components/realtime-guard/tamper-modal.tsx",
-                            lineNumber: 22,
-                            columnNumber: 25
-                        }, this)
-                    }, void 0, false, {
+                                    }, void 0, false, {
+                                        fileName: "[project]/SecureFin/components/realtime-guard/tamper-modal.tsx",
+                                        lineNumber: 25,
+                                        columnNumber: 29
+                                    }, this),
+                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$SecureFin$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                        children: [
+                                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$SecureFin$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$SecureFin$2f$components$2f$ui$2f$dialog$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["DialogTitle"], {
+                                                className: "text-xl font-bold text-white uppercase tracking-tight",
+                                                children: "Security Alert: Chain Integrity Compromised"
+                                            }, void 0, false, {
+                                                fileName: "[project]/SecureFin/components/realtime-guard/tamper-modal.tsx",
+                                                lineNumber: 29,
+                                                columnNumber: 33
+                                            }, this),
+                                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$SecureFin$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
+                                                className: "text-red-400 text-sm font-mono",
+                                                children: [
+                                                    errors.length,
+                                                    " Tampered Block(s) Detected"
+                                                ]
+                                            }, void 0, true, {
+                                                fileName: "[project]/SecureFin/components/realtime-guard/tamper-modal.tsx",
+                                                lineNumber: 32,
+                                                columnNumber: 33
+                                            }, this)
+                                        ]
+                                    }, void 0, true, {
+                                        fileName: "[project]/SecureFin/components/realtime-guard/tamper-modal.tsx",
+                                        lineNumber: 28,
+                                        columnNumber: 29
+                                    }, this)
+                                ]
+                            }, void 0, true, {
+                                fileName: "[project]/SecureFin/components/realtime-guard/tamper-modal.tsx",
+                                lineNumber: 24,
+                                columnNumber: 25
+                            }, this),
+                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$SecureFin$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$SecureFin$2f$components$2f$ui$2f$button$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["Button"], {
+                                onClick: onRepair,
+                                className: "bg-red-600 hover:bg-red-500 text-white font-bold px-6 border border-red-400 shadow-[0_0_15px_rgba(220,38,38,0.4)]",
+                                children: "🛡️ Repair System Integrity"
+                            }, void 0, false, {
+                                fileName: "[project]/SecureFin/components/realtime-guard/tamper-modal.tsx",
+                                lineNumber: 37,
+                                columnNumber: 25
+                            }, this)
+                        ]
+                    }, void 0, true, {
                         fileName: "[project]/SecureFin/components/realtime-guard/tamper-modal.tsx",
-                        lineNumber: 21,
+                        lineNumber: 23,
                         columnNumber: 21
                     }, this)
                 }, void 0, false, {
                     fileName: "[project]/SecureFin/components/realtime-guard/tamper-modal.tsx",
-                    lineNumber: 20,
+                    lineNumber: 22,
                     columnNumber: 17
                 }, this),
                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$SecureFin$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                     className: "flex-1 overflow-y-auto space-y-8 pr-2 custom-scrollbar",
                     children: errors.map((err, index)=>{
-                        const { block, error, signerHistory } = err;
-                        const isFalsePositive = block.data.action === 'ALLOW';
+                        const block = err?.block || {};
+                        const blockData = block?.data || {};
+                        const errorMsg = err?.error || "Unknown Integrity Breach";
+                        const blockIndex = err?.blockIndex ?? "N/A";
+                        const signerHistory = Array.isArray(err?.signerHistory) ? err.signerHistory : [];
                         return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$SecureFin$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                             className: "border-b border-slate-800 pb-8 last:border-0 last:pb-0",
                             children: [
@@ -440,16 +456,16 @@ function TamperModal({ isOpen, onClose, data }) {
                                             ]
                                         }, void 0, true, {
                                             fileName: "[project]/SecureFin/components/realtime-guard/tamper-modal.tsx",
-                                            lineNumber: 42,
+                                            lineNumber: 57,
                                             columnNumber: 37
                                         }, this),
-                                        error,
+                                        errorMsg,
                                         " at BLOCK #",
-                                        err.blockIndex
+                                        blockIndex
                                     ]
                                 }, void 0, true, {
                                     fileName: "[project]/SecureFin/components/realtime-guard/tamper-modal.tsx",
-                                    lineNumber: 41,
+                                    lineNumber: 56,
                                     columnNumber: 33
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$SecureFin$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -465,14 +481,14 @@ function TamperModal({ isOpen, onClose, data }) {
                                                             size: 12
                                                         }, void 0, false, {
                                                             fileName: "[project]/SecureFin/components/realtime-guard/tamper-modal.tsx",
-                                                            lineNumber: 49,
+                                                            lineNumber: 64,
                                                             columnNumber: 45
                                                         }, this),
                                                         " Transaction Payload"
                                                     ]
                                                 }, void 0, true, {
                                                     fileName: "[project]/SecureFin/components/realtime-guard/tamper-modal.tsx",
-                                                    lineNumber: 48,
+                                                    lineNumber: 63,
                                                     columnNumber: 41
                                                 }, this),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$SecureFin$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -482,45 +498,45 @@ function TamperModal({ isOpen, onClose, data }) {
                                                             className: "font-mono text-[11px] text-slate-400 break-all bg-black/40 p-2 rounded",
                                                             children: [
                                                                 "ID: ",
-                                                                block.data.id
+                                                                blockData.id || "N/A"
                                                             ]
                                                         }, void 0, true, {
                                                             fileName: "[project]/SecureFin/components/realtime-guard/tamper-modal.tsx",
-                                                            lineNumber: 52,
+                                                            lineNumber: 67,
                                                             columnNumber: 45
                                                         }, this),
                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$SecureFin$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                                            className: `text-xs font-bold ${isFalsePositive ? 'text-emerald-400' : 'text-red-400'}`,
+                                                            className: "text-xs font-bold text-red-400",
                                                             children: [
                                                                 "ACTION: ",
-                                                                block.data.action
+                                                                blockData.action || "SUSPECT"
                                                             ]
                                                         }, void 0, true, {
                                                             fileName: "[project]/SecureFin/components/realtime-guard/tamper-modal.tsx",
-                                                            lineNumber: 55,
+                                                            lineNumber: 70,
                                                             columnNumber: 45
                                                         }, this),
                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$SecureFin$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                                                             className: "text-xs text-slate-500 italic",
                                                             children: [
                                                                 "NOTE: ",
-                                                                block.data.notes || 'No analyst notes'
+                                                                blockData.notes || 'Forensic trace incomplete'
                                                             ]
                                                         }, void 0, true, {
                                                             fileName: "[project]/SecureFin/components/realtime-guard/tamper-modal.tsx",
-                                                            lineNumber: 58,
+                                                            lineNumber: 73,
                                                             columnNumber: 45
                                                         }, this)
                                                     ]
                                                 }, void 0, true, {
                                                     fileName: "[project]/SecureFin/components/realtime-guard/tamper-modal.tsx",
-                                                    lineNumber: 51,
+                                                    lineNumber: 66,
                                                     columnNumber: 41
                                                 }, this)
                                             ]
                                         }, void 0, true, {
                                             fileName: "[project]/SecureFin/components/realtime-guard/tamper-modal.tsx",
-                                            lineNumber: 47,
+                                            lineNumber: 62,
                                             columnNumber: 37
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$SecureFin$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -533,57 +549,71 @@ function TamperModal({ isOpen, onClose, data }) {
                                                             size: 12
                                                         }, void 0, false, {
                                                             fileName: "[project]/SecureFin/components/realtime-guard/tamper-modal.tsx",
-                                                            lineNumber: 66,
+                                                            lineNumber: 81,
                                                             columnNumber: 45
                                                         }, this),
                                                         " Digital Signature"
                                                     ]
                                                 }, void 0, true, {
                                                     fileName: "[project]/SecureFin/components/realtime-guard/tamper-modal.tsx",
-                                                    lineNumber: 65,
+                                                    lineNumber: 80,
                                                     columnNumber: 41
                                                 }, this),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$SecureFin$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                                                     className: "space-y-2",
                                                     children: [
                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$SecureFin$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                                            className: "font-mono text-[10px] text-emerald-500/80 break-all bg-emerald-950/20 p-2 rounded border border-emerald-900/30",
+                                                            className: "font-mono text-[11px] text-green-400 break-all bg-emerald-950/20 p-2 rounded border border-emerald-900/30",
                                                             children: [
                                                                 "SGR: ",
-                                                                block.signer
+                                                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$SecureFin$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
+                                                                    className: "text-white",
+                                                                    children: block.signer || "GENESIS_NODE"
+                                                                }, void 0, false, {
+                                                                    fileName: "[project]/SecureFin/components/realtime-guard/tamper-modal.tsx",
+                                                                    lineNumber: 85,
+                                                                    columnNumber: 54
+                                                                }, this)
                                                             ]
                                                         }, void 0, true, {
                                                             fileName: "[project]/SecureFin/components/realtime-guard/tamper-modal.tsx",
-                                                            lineNumber: 69,
+                                                            lineNumber: 84,
                                                             columnNumber: 45
                                                         }, this),
                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$SecureFin$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                                            className: "font-mono text-[8px] text-slate-600 break-all bg-black/40 p-2 rounded",
+                                                            className: "font-mono text-[9px] text-slate-300 break-all bg-black/60 p-2 rounded border border-slate-800",
                                                             children: [
                                                                 "SIG: ",
-                                                                block.signature
+                                                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$SecureFin$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
+                                                                    className: "text-slate-400",
+                                                                    children: block.signature || "ROOT_SALT_SYSTEM"
+                                                                }, void 0, false, {
+                                                                    fileName: "[project]/SecureFin/components/realtime-guard/tamper-modal.tsx",
+                                                                    lineNumber: 88,
+                                                                    columnNumber: 54
+                                                                }, this)
                                                             ]
                                                         }, void 0, true, {
                                                             fileName: "[project]/SecureFin/components/realtime-guard/tamper-modal.tsx",
-                                                            lineNumber: 72,
+                                                            lineNumber: 87,
                                                             columnNumber: 45
                                                         }, this)
                                                     ]
                                                 }, void 0, true, {
                                                     fileName: "[project]/SecureFin/components/realtime-guard/tamper-modal.tsx",
-                                                    lineNumber: 68,
+                                                    lineNumber: 83,
                                                     columnNumber: 41
                                                 }, this)
                                             ]
                                         }, void 0, true, {
                                             fileName: "[project]/SecureFin/components/realtime-guard/tamper-modal.tsx",
-                                            lineNumber: 64,
+                                            lineNumber: 79,
                                             columnNumber: 37
                                         }, this)
                                     ]
                                 }, void 0, true, {
                                     fileName: "[project]/SecureFin/components/realtime-guard/tamper-modal.tsx",
-                                    lineNumber: 46,
+                                    lineNumber: 61,
                                     columnNumber: 33
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$SecureFin$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -596,14 +626,14 @@ function TamperModal({ isOpen, onClose, data }) {
                                                     size: 12
                                                 }, void 0, false, {
                                                     fileName: "[project]/SecureFin/components/realtime-guard/tamper-modal.tsx",
-                                                    lineNumber: 81,
+                                                    lineNumber: 96,
                                                     columnNumber: 41
                                                 }, this),
                                                 " Signer Forensics"
                                             ]
                                         }, void 0, true, {
                                             fileName: "[project]/SecureFin/components/realtime-guard/tamper-modal.tsx",
-                                            lineNumber: 80,
+                                            lineNumber: 95,
                                             columnNumber: 37
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$SecureFin$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -620,7 +650,7 @@ function TamperModal({ isOpen, onClose, data }) {
                                                                     children: "Timestamp"
                                                                 }, void 0, false, {
                                                                     fileName: "[project]/SecureFin/components/realtime-guard/tamper-modal.tsx",
-                                                                    lineNumber: 87,
+                                                                    lineNumber: 102,
                                                                     columnNumber: 53
                                                                 }, this),
                                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$SecureFin$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("th", {
@@ -628,7 +658,7 @@ function TamperModal({ isOpen, onClose, data }) {
                                                                     children: "Action"
                                                                 }, void 0, false, {
                                                                     fileName: "[project]/SecureFin/components/realtime-guard/tamper-modal.tsx",
-                                                                    lineNumber: 88,
+                                                                    lineNumber: 103,
                                                                     columnNumber: 53
                                                                 }, this),
                                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$SecureFin$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("th", {
@@ -636,98 +666,112 @@ function TamperModal({ isOpen, onClose, data }) {
                                                                     children: "Tx ID"
                                                                 }, void 0, false, {
                                                                     fileName: "[project]/SecureFin/components/realtime-guard/tamper-modal.tsx",
-                                                                    lineNumber: 89,
+                                                                    lineNumber: 104,
                                                                     columnNumber: 53
                                                                 }, this)
                                                             ]
                                                         }, void 0, true, {
                                                             fileName: "[project]/SecureFin/components/realtime-guard/tamper-modal.tsx",
-                                                            lineNumber: 86,
+                                                            lineNumber: 101,
                                                             columnNumber: 49
                                                         }, this)
                                                     }, void 0, false, {
                                                         fileName: "[project]/SecureFin/components/realtime-guard/tamper-modal.tsx",
-                                                        lineNumber: 85,
+                                                        lineNumber: 100,
                                                         columnNumber: 45
                                                     }, this),
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$SecureFin$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("tbody", {
                                                         className: "divide-y divide-slate-800",
-                                                        children: signerHistory?.map((h, i)=>/*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$SecureFin$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("tr", {
+                                                        children: signerHistory.length > 0 ? signerHistory.map((h, i)=>/*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$SecureFin$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("tr", {
                                                                 className: "text-slate-400",
                                                                 children: [
                                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$SecureFin$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("td", {
                                                                         className: "p-2 font-mono opacity-60 text-[9px]",
-                                                                        children: new Date(h.timestamp).toLocaleString()
+                                                                        children: h.timestamp ? new Date(h.timestamp).toLocaleTimeString() : "N/A"
                                                                     }, void 0, false, {
                                                                         fileName: "[project]/SecureFin/components/realtime-guard/tamper-modal.tsx",
-                                                                        lineNumber: 95,
-                                                                        columnNumber: 57
+                                                                        lineNumber: 111,
+                                                                        columnNumber: 61
                                                                     }, this),
                                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$SecureFin$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("td", {
                                                                         className: `p-2 font-bold ${h.action === 'BLOCK' ? 'text-red-500' : 'text-emerald-500'}`,
                                                                         children: h.action
                                                                     }, void 0, false, {
                                                                         fileName: "[project]/SecureFin/components/realtime-guard/tamper-modal.tsx",
-                                                                        lineNumber: 96,
-                                                                        columnNumber: 57
+                                                                        lineNumber: 114,
+                                                                        columnNumber: 61
                                                                     }, this),
                                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$SecureFin$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("td", {
                                                                         className: "p-2 font-mono truncate max-w-[150px]",
-                                                                        children: h.id
+                                                                        children: h.id || "N/A"
                                                                     }, void 0, false, {
                                                                         fileName: "[project]/SecureFin/components/realtime-guard/tamper-modal.tsx",
-                                                                        lineNumber: 97,
-                                                                        columnNumber: 57
+                                                                        lineNumber: 117,
+                                                                        columnNumber: 61
                                                                     }, this)
                                                                 ]
                                                             }, i, true, {
                                                                 fileName: "[project]/SecureFin/components/realtime-guard/tamper-modal.tsx",
-                                                                lineNumber: 94,
-                                                                columnNumber: 53
-                                                            }, this))
+                                                                lineNumber: 110,
+                                                                columnNumber: 57
+                                                            }, this)) : /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$SecureFin$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("tr", {
+                                                            children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$SecureFin$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("td", {
+                                                                colSpan: 3,
+                                                                className: "p-4 text-center text-slate-600 italic",
+                                                                children: "No historical context available for this node address"
+                                                            }, void 0, false, {
+                                                                fileName: "[project]/SecureFin/components/realtime-guard/tamper-modal.tsx",
+                                                                lineNumber: 124,
+                                                                columnNumber: 57
+                                                            }, this)
+                                                        }, void 0, false, {
+                                                            fileName: "[project]/SecureFin/components/realtime-guard/tamper-modal.tsx",
+                                                            lineNumber: 123,
+                                                            columnNumber: 53
+                                                        }, this)
                                                     }, void 0, false, {
                                                         fileName: "[project]/SecureFin/components/realtime-guard/tamper-modal.tsx",
-                                                        lineNumber: 92,
+                                                        lineNumber: 107,
                                                         columnNumber: 45
                                                     }, this)
                                                 ]
                                             }, void 0, true, {
                                                 fileName: "[project]/SecureFin/components/realtime-guard/tamper-modal.tsx",
-                                                lineNumber: 84,
+                                                lineNumber: 99,
                                                 columnNumber: 41
                                             }, this)
                                         }, void 0, false, {
                                             fileName: "[project]/SecureFin/components/realtime-guard/tamper-modal.tsx",
-                                            lineNumber: 83,
+                                            lineNumber: 98,
                                             columnNumber: 37
                                         }, this)
                                     ]
                                 }, void 0, true, {
                                     fileName: "[project]/SecureFin/components/realtime-guard/tamper-modal.tsx",
-                                    lineNumber: 79,
+                                    lineNumber: 94,
                                     columnNumber: 33
                                 }, this)
                             ]
                         }, index, true, {
                             fileName: "[project]/SecureFin/components/realtime-guard/tamper-modal.tsx",
-                            lineNumber: 40,
+                            lineNumber: 55,
                             columnNumber: 29
                         }, this);
                     })
                 }, void 0, false, {
                     fileName: "[project]/SecureFin/components/realtime-guard/tamper-modal.tsx",
-                    lineNumber: 34,
+                    lineNumber: 46,
                     columnNumber: 17
                 }, this)
             ]
         }, void 0, true, {
             fileName: "[project]/SecureFin/components/realtime-guard/tamper-modal.tsx",
-            lineNumber: 19,
+            lineNumber: 21,
             columnNumber: 13
         }, this)
     }, void 0, false, {
         fileName: "[project]/SecureFin/components/realtime-guard/tamper-modal.tsx",
-        lineNumber: 18,
+        lineNumber: 20,
         columnNumber: 9
     }, this);
 }
@@ -1507,8 +1551,10 @@ var __TURBOPACK__imported__module__$5b$project$5d2f$SecureFin$2f$node_modules$2f
 var __TURBOPACK__imported__module__$5b$project$5d2f$SecureFin$2f$components$2f$realtime$2d$guard$2f$live$2d$feed$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/SecureFin/components/realtime-guard/live-feed.tsx [app-ssr] (ecmascript)");
 var __TURBOPACK__imported__module__$5b$project$5d2f$SecureFin$2f$components$2f$realtime$2d$guard$2f$audit$2d$log$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/SecureFin/components/realtime-guard/audit-log.tsx [app-ssr] (ecmascript)");
 var __TURBOPACK__imported__module__$5b$project$5d2f$SecureFin$2f$components$2f$realtime$2d$guard$2f$report$2d$panel$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/SecureFin/components/realtime-guard/report-panel.tsx [app-ssr] (ecmascript)");
+var __TURBOPACK__imported__module__$5b$project$5d2f$SecureFin$2f$components$2f$realtime$2d$guard$2f$tamper$2d$modal$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/SecureFin/components/realtime-guard/tamper-modal.tsx [app-ssr] (ecmascript)");
 ;
 "use client";
+;
 ;
 ;
 ;
@@ -1532,6 +1578,8 @@ function RealtimeGuardPage() {
     const [selectedTransaction, setSelectedTransaction] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$SecureFin$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useState"])(null);
     const [isAuditLogOpen, setIsAuditLogOpen] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$SecureFin$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useState"])(false);
     const [isConnected, setIsConnected] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$SecureFin$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useState"])(false);
+    const [tamperData, setTamperData] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$SecureFin$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useState"])(null);
+    const [isTamperModalOpen, setIsTamperModalOpen] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$SecureFin$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useState"])(false);
     (0, __TURBOPACK__imported__module__$5b$project$5d2f$SecureFin$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useEffect"])(()=>{
         const wsUrl = 'ws://localhost:4000';
         const ws = new WebSocket(wsUrl);
@@ -1553,6 +1601,12 @@ function RealtimeGuardPage() {
                             message.data,
                             ...prev
                         ].slice(0, 50));
+                } else if (message.type === 'BLOCKCHAIN_TAMPERED') {
+                    setTamperData(message.data);
+                    setIsTamperModalOpen(true);
+                } else if (message.type === 'BLOCKCHAIN_RECOVERY') {
+                    setIsTamperModalOpen(false);
+                    setTamperData(null);
                 }
             } catch (e) {
                 console.error('Error parsing WS message:', e);
@@ -1563,9 +1617,27 @@ function RealtimeGuardPage() {
             setIsConnected(false);
         };
         return ()=>ws.close();
-    }, [
-        selectedTransaction
-    ]);
+    }, []);
+    const handleSimulateAttack = async ()=>{
+        try {
+            await fetch('http://localhost:4000/api/blockchain/simulate-attack', {
+                method: 'POST'
+            });
+        } catch (e) {
+            console.error('Failed to simulate');
+        }
+    };
+    const handleRestoreChain = async ()=>{
+        try {
+            await fetch('http://localhost:4000/api/blockchain/restore', {
+                method: 'POST'
+            });
+            setIsTamperModalOpen(false);
+            setTamperData(null);
+        } catch (e) {
+            console.error('Failed to restore');
+        }
+    };
     const fraudCount = transactions.filter((t)=>t.fraud_score > 80).length;
     return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$SecureFin$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
         className: "min-h-screen bg-black text-green-500 font-mono flex flex-col relative overflow-hidden",
@@ -1575,14 +1647,14 @@ function RealtimeGuardPage() {
                 onClose: ()=>setIsAuditLogOpen(false)
             }, void 0, false, {
                 fileName: "[project]/SecureFin/app/realtime-guard/page.tsx",
-                lineNumber: 59,
+                lineNumber: 86,
                 columnNumber: 13
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$SecureFin$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                 className: "absolute inset-0 bg-[linear-gradient(rgba(0,255,0,0.03)_1px,transparent_1px),linear-gradient(90deg,rgba(0,255,0,0.03)_1px,transparent_1px)] bg-[size:20px_20px]"
             }, void 0, false, {
                 fileName: "[project]/SecureFin/app/realtime-guard/page.tsx",
-                lineNumber: 62,
+                lineNumber: 89,
                 columnNumber: 13
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$SecureFin$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("header", {
@@ -1600,20 +1672,20 @@ function RealtimeGuardPage() {
                                             className: "h-8 w-8 text-green-500 animate-pulse"
                                         }, void 0, false, {
                                             fileName: "[project]/SecureFin/app/realtime-guard/page.tsx",
-                                            lineNumber: 68,
+                                            lineNumber: 95,
                                             columnNumber: 29
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$SecureFin$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$SecureFin$2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$cpu$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__$3c$export__default__as__Cpu$3e$__["Cpu"], {
                                             className: "h-4 w-4 text-green-400 absolute -bottom-1 -right-1"
                                         }, void 0, false, {
                                             fileName: "[project]/SecureFin/app/realtime-guard/page.tsx",
-                                            lineNumber: 69,
+                                            lineNumber: 96,
                                             columnNumber: 29
                                         }, this)
                                     ]
                                 }, void 0, true, {
                                     fileName: "[project]/SecureFin/app/realtime-guard/page.tsx",
-                                    lineNumber: 67,
+                                    lineNumber: 94,
                                     columnNumber: 25
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$SecureFin$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1624,7 +1696,7 @@ function RealtimeGuardPage() {
                                             children: "RealtimeGuard"
                                         }, void 0, false, {
                                             fileName: "[project]/SecureFin/app/realtime-guard/page.tsx",
-                                            lineNumber: 72,
+                                            lineNumber: 99,
                                             columnNumber: 29
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$SecureFin$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
@@ -1632,19 +1704,19 @@ function RealtimeGuardPage() {
                                             children: "Global Defense Grid • Alpha v2.0"
                                         }, void 0, false, {
                                             fileName: "[project]/SecureFin/app/realtime-guard/page.tsx",
-                                            lineNumber: 73,
+                                            lineNumber: 100,
                                             columnNumber: 29
                                         }, this)
                                     ]
                                 }, void 0, true, {
                                     fileName: "[project]/SecureFin/app/realtime-guard/page.tsx",
-                                    lineNumber: 71,
+                                    lineNumber: 98,
                                     columnNumber: 25
                                 }, this)
                             ]
                         }, void 0, true, {
                             fileName: "[project]/SecureFin/app/realtime-guard/page.tsx",
-                            lineNumber: 66,
+                            lineNumber: 93,
                             columnNumber: 21
                         }, this),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$SecureFin$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1658,7 +1730,7 @@ function RealtimeGuardPage() {
                                             children: "Node Status"
                                         }, void 0, false, {
                                             fileName: "[project]/SecureFin/app/realtime-guard/page.tsx",
-                                            lineNumber: 79,
+                                            lineNumber: 106,
                                             columnNumber: 29
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$SecureFin$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
@@ -1668,20 +1740,20 @@ function RealtimeGuardPage() {
                                                     className: "h-3 w-3 fill-green-500"
                                                 }, void 0, false, {
                                                     fileName: "[project]/SecureFin/app/realtime-guard/page.tsx",
-                                                    lineNumber: 81,
+                                                    lineNumber: 108,
                                                     columnNumber: 33
                                                 }, this),
                                                 " STABLE"
                                             ]
                                         }, void 0, true, {
                                             fileName: "[project]/SecureFin/app/realtime-guard/page.tsx",
-                                            lineNumber: 80,
+                                            lineNumber: 107,
                                             columnNumber: 29
                                         }, this)
                                     ]
                                 }, void 0, true, {
                                     fileName: "[project]/SecureFin/app/realtime-guard/page.tsx",
-                                    lineNumber: 78,
+                                    lineNumber: 105,
                                     columnNumber: 25
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$SecureFin$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1692,7 +1764,7 @@ function RealtimeGuardPage() {
                                             children: "Traffic Purge"
                                         }, void 0, false, {
                                             fileName: "[project]/SecureFin/app/realtime-guard/page.tsx",
-                                            lineNumber: 85,
+                                            lineNumber: 112,
                                             columnNumber: 29
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$SecureFin$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
@@ -1700,19 +1772,19 @@ function RealtimeGuardPage() {
                                             children: "99.9%"
                                         }, void 0, false, {
                                             fileName: "[project]/SecureFin/app/realtime-guard/page.tsx",
-                                            lineNumber: 86,
+                                            lineNumber: 113,
                                             columnNumber: 29
                                         }, this)
                                     ]
                                 }, void 0, true, {
                                     fileName: "[project]/SecureFin/app/realtime-guard/page.tsx",
-                                    lineNumber: 84,
+                                    lineNumber: 111,
                                     columnNumber: 25
                                 }, this)
                             ]
                         }, void 0, true, {
                             fileName: "[project]/SecureFin/app/realtime-guard/page.tsx",
-                            lineNumber: 77,
+                            lineNumber: 104,
                             columnNumber: 21
                         }, this),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$SecureFin$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1728,14 +1800,24 @@ function RealtimeGuardPage() {
                                             className: "h-4 w-4 mr-2 group-hover:animate-bounce"
                                         }, void 0, false, {
                                             fileName: "[project]/SecureFin/app/realtime-guard/page.tsx",
-                                            lineNumber: 97,
+                                            lineNumber: 124,
                                             columnNumber: 29
                                         }, this),
                                         "Audit Log"
                                     ]
                                 }, void 0, true, {
                                     fileName: "[project]/SecureFin/app/realtime-guard/page.tsx",
-                                    lineNumber: 91,
+                                    lineNumber: 118,
+                                    columnNumber: 25
+                                }, this),
+                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$SecureFin$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$SecureFin$2f$components$2f$ui$2f$button$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["Button"], {
+                                    size: "sm",
+                                    onClick: handleSimulateAttack,
+                                    className: "bg-red-500/10 hover:bg-red-600/30 text-red-500 border border-red-900/50 font-bold",
+                                    children: "🔥 Simulate Breach"
+                                }, void 0, false, {
+                                    fileName: "[project]/SecureFin/app/realtime-guard/page.tsx",
+                                    lineNumber: 127,
                                     columnNumber: 25
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$SecureFin$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1745,14 +1827,14 @@ function RealtimeGuardPage() {
                                             className: `w-1.5 h-1.5 rounded-full ${isConnected ? 'bg-green-500 shadow-[0_0_10px_rgba(34,197,94,1)] animate-pulse' : 'bg-red-500'}`
                                         }, void 0, false, {
                                             fileName: "[project]/SecureFin/app/realtime-guard/page.tsx",
-                                            lineNumber: 101,
+                                            lineNumber: 135,
                                             columnNumber: 29
                                         }, this),
                                         isConnected ? 'LIVE_PROTOCOL_ACTIVE' : 'PROTOCOL_OFFLINE'
                                     ]
                                 }, void 0, true, {
                                     fileName: "[project]/SecureFin/app/realtime-guard/page.tsx",
-                                    lineNumber: 100,
+                                    lineNumber: 134,
                                     columnNumber: 25
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$SecureFin$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$SecureFin$2f$components$2f$ui$2f$button$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["Button"], {
@@ -1766,34 +1848,34 @@ function RealtimeGuardPage() {
                                             className: "h-4 w-4"
                                         }, void 0, false, {
                                             fileName: "[project]/SecureFin/app/realtime-guard/page.tsx",
-                                            lineNumber: 106,
+                                            lineNumber: 140,
                                             columnNumber: 33
                                         }, this)
                                     }, void 0, false, {
                                         fileName: "[project]/SecureFin/app/realtime-guard/page.tsx",
-                                        lineNumber: 105,
+                                        lineNumber: 139,
                                         columnNumber: 29
                                     }, this)
                                 }, void 0, false, {
                                     fileName: "[project]/SecureFin/app/realtime-guard/page.tsx",
-                                    lineNumber: 104,
+                                    lineNumber: 138,
                                     columnNumber: 25
                                 }, this)
                             ]
                         }, void 0, true, {
                             fileName: "[project]/SecureFin/app/realtime-guard/page.tsx",
-                            lineNumber: 90,
+                            lineNumber: 117,
                             columnNumber: 21
                         }, this)
                     ]
                 }, void 0, true, {
                     fileName: "[project]/SecureFin/app/realtime-guard/page.tsx",
-                    lineNumber: 65,
+                    lineNumber: 92,
                     columnNumber: 17
                 }, this)
             }, void 0, false, {
                 fileName: "[project]/SecureFin/app/realtime-guard/page.tsx",
-                lineNumber: 64,
+                lineNumber: 91,
                 columnNumber: 13
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$SecureFin$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("main", {
@@ -1811,12 +1893,12 @@ function RealtimeGuardPage() {
                                             className: "h-16 w-16"
                                         }, void 0, false, {
                                             fileName: "[project]/SecureFin/app/realtime-guard/page.tsx",
-                                            lineNumber: 117,
+                                            lineNumber: 151,
                                             columnNumber: 29
                                         }, this)
                                     }, void 0, false, {
                                         fileName: "[project]/SecureFin/app/realtime-guard/page.tsx",
-                                        lineNumber: 116,
+                                        lineNumber: 150,
                                         columnNumber: 25
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$SecureFin$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1827,7 +1909,7 @@ function RealtimeGuardPage() {
                                                 children: "Threat Level"
                                             }, void 0, false, {
                                                 fileName: "[project]/SecureFin/app/realtime-guard/page.tsx",
-                                                lineNumber: 120,
+                                                lineNumber: 154,
                                                 columnNumber: 29
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$SecureFin$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1839,18 +1921,18 @@ function RealtimeGuardPage() {
                                                     }
                                                 }, void 0, false, {
                                                     fileName: "[project]/SecureFin/app/realtime-guard/page.tsx",
-                                                    lineNumber: 122,
+                                                    lineNumber: 156,
                                                     columnNumber: 33
                                                 }, this)
                                             }, void 0, false, {
                                                 fileName: "[project]/SecureFin/app/realtime-guard/page.tsx",
-                                                lineNumber: 121,
+                                                lineNumber: 155,
                                                 columnNumber: 29
                                             }, this)
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/SecureFin/app/realtime-guard/page.tsx",
-                                        lineNumber: 119,
+                                        lineNumber: 153,
                                         columnNumber: 25
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$SecureFin$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1858,13 +1940,13 @@ function RealtimeGuardPage() {
                                         children: fraudCount > 10 ? 'CRITICAL' : fraudCount > 5 ? 'HIGH' : 'MODERATE'
                                     }, void 0, false, {
                                         fileName: "[project]/SecureFin/app/realtime-guard/page.tsx",
-                                        lineNumber: 125,
+                                        lineNumber: 159,
                                         columnNumber: 25
                                     }, this)
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/SecureFin/app/realtime-guard/page.tsx",
-                                lineNumber: 115,
+                                lineNumber: 149,
                                 columnNumber: 21
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$SecureFin$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1876,12 +1958,12 @@ function RealtimeGuardPage() {
                                             className: "h-16 w-16"
                                         }, void 0, false, {
                                             fileName: "[project]/SecureFin/app/realtime-guard/page.tsx",
-                                            lineNumber: 132,
+                                            lineNumber: 166,
                                             columnNumber: 29
                                         }, this)
                                     }, void 0, false, {
                                         fileName: "[project]/SecureFin/app/realtime-guard/page.tsx",
-                                        lineNumber: 131,
+                                        lineNumber: 165,
                                         columnNumber: 25
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$SecureFin$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1891,12 +1973,12 @@ function RealtimeGuardPage() {
                                             children: "Sync Frequency"
                                         }, void 0, false, {
                                             fileName: "[project]/SecureFin/app/realtime-guard/page.tsx",
-                                            lineNumber: 135,
+                                            lineNumber: 169,
                                             columnNumber: 29
                                         }, this)
                                     }, void 0, false, {
                                         fileName: "[project]/SecureFin/app/realtime-guard/page.tsx",
-                                        lineNumber: 134,
+                                        lineNumber: 168,
                                         columnNumber: 25
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$SecureFin$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1904,13 +1986,13 @@ function RealtimeGuardPage() {
                                         children: isConnected ? '2.48 GHz' : '0.00 GHz'
                                     }, void 0, false, {
                                         fileName: "[project]/SecureFin/app/realtime-guard/page.tsx",
-                                        lineNumber: 137,
+                                        lineNumber: 171,
                                         columnNumber: 25
                                     }, this)
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/SecureFin/app/realtime-guard/page.tsx",
-                                lineNumber: 130,
+                                lineNumber: 164,
                                 columnNumber: 21
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$SecureFin$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1922,12 +2004,12 @@ function RealtimeGuardPage() {
                                             className: "h-16 w-16"
                                         }, void 0, false, {
                                             fileName: "[project]/SecureFin/app/realtime-guard/page.tsx",
-                                            lineNumber: 142,
+                                            lineNumber: 176,
                                             columnNumber: 29
                                         }, this)
                                     }, void 0, false, {
                                         fileName: "[project]/SecureFin/app/realtime-guard/page.tsx",
-                                        lineNumber: 141,
+                                        lineNumber: 175,
                                         columnNumber: 25
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$SecureFin$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1937,12 +2019,12 @@ function RealtimeGuardPage() {
                                             children: "Confirmed Frauds"
                                         }, void 0, false, {
                                             fileName: "[project]/SecureFin/app/realtime-guard/page.tsx",
-                                            lineNumber: 145,
+                                            lineNumber: 179,
                                             columnNumber: 29
                                         }, this)
                                     }, void 0, false, {
                                         fileName: "[project]/SecureFin/app/realtime-guard/page.tsx",
-                                        lineNumber: 144,
+                                        lineNumber: 178,
                                         columnNumber: 25
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$SecureFin$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1950,13 +2032,13 @@ function RealtimeGuardPage() {
                                         children: fraudCount
                                     }, void 0, false, {
                                         fileName: "[project]/SecureFin/app/realtime-guard/page.tsx",
-                                        lineNumber: 147,
+                                        lineNumber: 181,
                                         columnNumber: 25
                                     }, this)
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/SecureFin/app/realtime-guard/page.tsx",
-                                lineNumber: 140,
+                                lineNumber: 174,
                                 columnNumber: 21
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$SecureFin$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1968,12 +2050,12 @@ function RealtimeGuardPage() {
                                             className: "h-16 w-16"
                                         }, void 0, false, {
                                             fileName: "[project]/SecureFin/app/realtime-guard/page.tsx",
-                                            lineNumber: 152,
+                                            lineNumber: 186,
                                             columnNumber: 29
                                         }, this)
                                     }, void 0, false, {
                                         fileName: "[project]/SecureFin/app/realtime-guard/page.tsx",
-                                        lineNumber: 151,
+                                        lineNumber: 185,
                                         columnNumber: 25
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$SecureFin$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1983,12 +2065,12 @@ function RealtimeGuardPage() {
                                             children: "Buffer Latency"
                                         }, void 0, false, {
                                             fileName: "[project]/SecureFin/app/realtime-guard/page.tsx",
-                                            lineNumber: 155,
+                                            lineNumber: 189,
                                             columnNumber: 29
                                         }, this)
                                     }, void 0, false, {
                                         fileName: "[project]/SecureFin/app/realtime-guard/page.tsx",
-                                        lineNumber: 154,
+                                        lineNumber: 188,
                                         columnNumber: 25
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$SecureFin$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1996,19 +2078,19 @@ function RealtimeGuardPage() {
                                         children: "14ms"
                                     }, void 0, false, {
                                         fileName: "[project]/SecureFin/app/realtime-guard/page.tsx",
-                                        lineNumber: 157,
+                                        lineNumber: 191,
                                         columnNumber: 25
                                     }, this)
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/SecureFin/app/realtime-guard/page.tsx",
-                                lineNumber: 150,
+                                lineNumber: 184,
                                 columnNumber: 21
                             }, this)
                         ]
                     }, void 0, true, {
                         fileName: "[project]/SecureFin/app/realtime-guard/page.tsx",
-                        lineNumber: 114,
+                        lineNumber: 148,
                         columnNumber: 17
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$SecureFin$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -2020,12 +2102,12 @@ function RealtimeGuardPage() {
                                     transactions: transactions
                                 }, void 0, false, {
                                     fileName: "[project]/SecureFin/app/realtime-guard/page.tsx",
-                                    lineNumber: 163,
+                                    lineNumber: 197,
                                     columnNumber: 25
                                 }, this)
                             }, void 0, false, {
                                 fileName: "[project]/SecureFin/app/realtime-guard/page.tsx",
-                                lineNumber: 162,
+                                lineNumber: 196,
                                 columnNumber: 21
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$SecureFin$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -2041,14 +2123,14 @@ function RealtimeGuardPage() {
                                                         className: "h-4 w-4"
                                                     }, void 0, false, {
                                                         fileName: "[project]/SecureFin/app/realtime-guard/page.tsx",
-                                                        lineNumber: 168,
+                                                        lineNumber: 202,
                                                         columnNumber: 33
                                                     }, this),
                                                     "Live Stream"
                                                 ]
                                             }, void 0, true, {
                                                 fileName: "[project]/SecureFin/app/realtime-guard/page.tsx",
-                                                lineNumber: 167,
+                                                lineNumber: 201,
                                                 columnNumber: 29
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$SecureFin$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
@@ -2056,13 +2138,13 @@ function RealtimeGuardPage() {
                                                 children: "SYNCHRONIZING"
                                             }, void 0, false, {
                                                 fileName: "[project]/SecureFin/app/realtime-guard/page.tsx",
-                                                lineNumber: 171,
+                                                lineNumber: 205,
                                                 columnNumber: 29
                                             }, this)
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/SecureFin/app/realtime-guard/page.tsx",
-                                        lineNumber: 166,
+                                        lineNumber: 200,
                                         columnNumber: 25
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$SecureFin$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -2072,18 +2154,18 @@ function RealtimeGuardPage() {
                                             onSelect: setSelectedTransaction
                                         }, void 0, false, {
                                             fileName: "[project]/SecureFin/app/realtime-guard/page.tsx",
-                                            lineNumber: 174,
+                                            lineNumber: 208,
                                             columnNumber: 29
                                         }, this)
                                     }, void 0, false, {
                                         fileName: "[project]/SecureFin/app/realtime-guard/page.tsx",
-                                        lineNumber: 173,
+                                        lineNumber: 207,
                                         columnNumber: 25
                                     }, this)
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/SecureFin/app/realtime-guard/page.tsx",
-                                lineNumber: 165,
+                                lineNumber: 199,
                                 columnNumber: 21
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$SecureFin$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -2092,30 +2174,40 @@ function RealtimeGuardPage() {
                                     transaction: selectedTransaction
                                 }, void 0, false, {
                                     fileName: "[project]/SecureFin/app/realtime-guard/page.tsx",
-                                    lineNumber: 178,
+                                    lineNumber: 212,
                                     columnNumber: 25
                                 }, this)
                             }, void 0, false, {
                                 fileName: "[project]/SecureFin/app/realtime-guard/page.tsx",
-                                lineNumber: 177,
+                                lineNumber: 211,
                                 columnNumber: 21
                             }, this)
                         ]
                     }, void 0, true, {
                         fileName: "[project]/SecureFin/app/realtime-guard/page.tsx",
-                        lineNumber: 161,
+                        lineNumber: 195,
                         columnNumber: 17
                     }, this)
                 ]
             }, void 0, true, {
                 fileName: "[project]/SecureFin/app/realtime-guard/page.tsx",
-                lineNumber: 113,
+                lineNumber: 147,
+                columnNumber: 13
+            }, this),
+            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$SecureFin$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$SecureFin$2f$components$2f$realtime$2d$guard$2f$tamper$2d$modal$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["TamperModal"], {
+                isOpen: isTamperModalOpen,
+                onClose: ()=>setIsTamperModalOpen(false),
+                onRepair: handleRestoreChain,
+                data: tamperData
+            }, void 0, false, {
+                fileName: "[project]/SecureFin/app/realtime-guard/page.tsx",
+                lineNumber: 216,
                 columnNumber: 13
             }, this)
         ]
     }, void 0, true, {
         fileName: "[project]/SecureFin/app/realtime-guard/page.tsx",
-        lineNumber: 58,
+        lineNumber: 85,
         columnNumber: 9
     }, this);
 }
