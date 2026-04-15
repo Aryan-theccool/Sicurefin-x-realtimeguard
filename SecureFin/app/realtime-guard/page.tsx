@@ -59,7 +59,7 @@ export default function RealtimeGuardPage() {
         };
 
         return () => ws.close();
-    }, [selectedTransaction]);
+    }, []);
 
     const handleSimulateAttack = async () => {
         try {
@@ -216,6 +216,7 @@ export default function RealtimeGuardPage() {
             <TamperModal
                 isOpen={isTamperModalOpen}
                 onClose={() => setIsTamperModalOpen(false)}
+                onRepair={handleRestoreChain}
                 data={tamperData}
             />
         </div>
