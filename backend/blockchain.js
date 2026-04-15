@@ -66,6 +66,33 @@ class Blockchain {
         this.saveChain();
     }
 
+    // --- DEMO TOOLS ---
+    
+    // Deliberately corrupt a block to simulate an attack
+    corruptBlock(index = -1) {
+        if (this.chain.length <= 1) return false;
+        
+        // Default to a random block if none specified (excluding genesis)
+        const targetIndex = index === -1 ? Math.floor(Math.random() * (this.chain.length - 1)) + 1 : index;
+        
+        if (this.chain[targetIndex]) {
+            console.log(`[ATTACK SIMULATOR] Corrupting Block #${targetIndex}`);
+            // Change the action to something suspicious
+            this.chain[targetIndex].data.action = "ALLOW"; 
+            this.chain[targetIndex].data.notes = "INJECTED_BY_HACKER";
+            // WE DON'T RE-CALCULATE HASH OR SIGNATURE. This breaks the chain.
+            this.saveChain();
+            return true;
+        }
+        return false;
+    }
+
+    // Restore the disk file from the current valid in-memory chain
+    restoreChain() {
+        console.log("[SECURITY] Restoring chain integrity from memory...");
+        this.saveChain();
+    }
+
     isChainValid() {
         const errors = [];
         for (let i = 1; i < this.chain.length; i++) {
@@ -83,9 +110,14 @@ class Blockchain {
 
             if (currentBlock.hash !== reconstructedBlock.calculateHash()) {
                 console.log(`Invalid Hash at block ${i}`);
-                console.log(`Block Data:`, JSON.stringify(currentBlock.data, null, 2));
-                errors.push({ valid: false, error: "Hash Mismatch", blockIndex: i, block: currentBlock });
-                continue; // Continue to find other errors
+                errors.push({ 
+                    valid: false, 
+                    error: "Hash Mismatch", 
+                    blockIndex: i, 
+                    block: currentBlock,
+                    signerHistory: this.getSignerHistory(currentBlock.signer)
+                });
+                continue; 
             }
 
             if (currentBlock.previousHash !== previousBlock.hash) {
@@ -99,12 +131,31 @@ class Blockchain {
                 const recoveredSigner = web3.eth.accounts.recover(currentBlock.hash, currentBlock.signature);
                 if (recoveredSigner !== currentBlock.signer) {
                     console.log(`Invalid Signature at block ${i}`);
-                    errors.push({ valid: false, error: "Invalid Signature", blockIndex: i, block: currentBlock });
+                    errors.push({ 
+                        valid: false, 
+                        error: "Invalid Signature", 
+                        blockIndex: i, 
+                        block: currentBlock,
+                        signerHistory: this.getSignerHistory(currentBlock.signer)
+                    });
                     continue;
                 }
             }
         }
         return { valid: errors.length === 0, errors };
+    }
+
+    // New helper to fetch historical context for a signer
+    getSignerHistory(signerAddress) {
+        if (!signerAddress) return [];
+        return this.chain
+            .filter(b => b.signer === signerAddress)
+            .map(b => ({
+                timestamp: b.timestamp,
+                action: b.data?.action || "TRANSIT",
+                id: b.data?.id || "N/A"
+            }))
+            .slice(-5); // Last 5 recorded actions
     }
 
     saveChain() {
