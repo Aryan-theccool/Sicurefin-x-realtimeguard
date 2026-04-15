@@ -268,8 +268,60 @@ app.post('/api/transaction', (req, res) => {
   saveTransactions();
 
   broadcast({ type: 'TX', data: transaction });
-
   res.json({ success: true, id: txId, triggers: pmlaTriggers });
+});
+
+// --- NEW SECURITY SIMULATION ENDPOINTS ---
+
+app.post('/api/blockchain/simulate-attack', (req, res) => {
+  const success = auditBlockchain.corruptBlock();
+  if (success) {
+    res.json({ success: true, message: "Attack simulated. Watch the dashboard!" });
+  } else {
+    res.status(400).json({ error: "Not enough blocks to corrupt. Record some actions first." });
+  }
+});
+
+app.post('/api/blockchain/restore', (req, res) => {
+  auditBlockchain.restoreChain();
+  res.json({ success: true, message: "Chain restored to golden state." });
+});
+
+// --- AUTOMATED SURVEILLANCE (Watcher) ---
+
+let watchTimeout = null;
+const chainPath = path.join(__dirname, 'data', 'blockchain.json');
+
+// Ensure the directory exists so the watcher doesn't fail
+if (!fs.existsSync(path.dirname(chainPath))) {
+  fs.mkdirSync(path.dirname(chainPath), { recursive: true });
+}
+// Touch file if it doesn't exist
+if (!fs.existsSync(chainPath)) {
+  fs.writeFileSync(chainPath, JSON.stringify([], null, 2));
+}
+
+fs.watch(chainPath, (eventType) => {
+  if (eventType === 'change') {
+    // Debounce to avoid multiple triggers on single save
+    if (watchTimeout) clearTimeout(watchTimeout);
+    watchTimeout = setTimeout(() => {
+      console.log("👀 [WATCHER] Change detected in blockchain.json. Verifying...");
+      auditBlockchain.loadChain();
+      const validation = auditBlockchain.isChainValid();
+      
+      if (!validation.valid) {
+        console.log("🚨 [WATCHER] TAMPERING DETECTED!");
+        broadcast({ 
+          type: 'BLOCKCHAIN_TAMPERED', 
+          data: { errors: validation.errors } 
+        });
+      } else {
+        console.log("✅ [WATCHER] Chain is still valid.");
+        broadcast({ type: 'BLOCKCHAIN_RECOVERY' });
+      }
+    }, 1000);
+  }
 });
 
 server.listen(PORT, () => {

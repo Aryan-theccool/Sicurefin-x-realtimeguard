@@ -12,8 +12,8 @@
     "timestamp": "2025-11-28T06:57:16.151Z",
     "data": {
       "id": "test_tx_1764313036002",
-      "action": "BLOCK",
-      "notes": "Verification Test"
+      "action": "ALLOW",
+      "notes": "INJECTED_BY_HACKER"
     },
     "previousHash": "5536927503e31361c571cf6b6e289c2ea4c86f8859dfcc5f431b4a966e72f30f",
     "hash": "67faee5e5aa3ec2ec637d6e8986be44cacac0fd01d93a8992a2d3a91574814da",
@@ -24,8 +24,8 @@
     "timestamp": "2025-11-28T07:20:36.579Z",
     "data": {
       "id": "af48752a-f63d-4990-b4ef-22b001ac5035",
-      "action": "BLOCK",
-      "notes": "Analyst manual review"
+      "action": "ALLOW",
+      "notes": "INJECTED_BY_HACKER"
     },
     "previousHash": "67faee5e5aa3ec2ec637d6e8986be44cacac0fd01d93a8992a2d3a91574814da",
     "hash": "fab26f9f634f49be2db82f51cc12e96ccf99729149ad9a6919f02bc955205a93",
@@ -108,8 +108,8 @@
     "timestamp": "2025-11-28T10:16:11.748Z",
     "data": {
       "id": "9b142f69-f3fd-4d10-b72f-042f8ca8b431",
-      "action": "BLOCK",
-      "notes": "Analyst manual review"
+      "action": "ALLOW",
+      "notes": "INJECTED_BY_HACKER"
     },
     "previousHash": "9c72958e14438c65c277806bf00a0b6a45410e962c6c8515a67714751764b937",
     "hash": "7774677c05ad80688ee414354deab74a3686c3f8bf40630fbbfab11b8915d76f",
@@ -156,8 +156,8 @@
     "timestamp": "2025-11-28T14:15:49.235Z",
     "data": {
       "id": "91f29fdb-86dd-46e4-9f26-55248c2d8c64",
-      "action": "BLOCK",
-      "notes": "Analyst manual review"
+      "action": "ALLOW",
+      "notes": "INJECTED_BY_HACKER"
     },
     "previousHash": "e04ec51df34f3dbe24c11a0573a7f1b47e9542c93f2005854b2f7fa78ab3a265",
     "hash": "0d194c05e5e63f004b0a59082efb541dfba4902d1bdb610f261dde8a46a5437f",
@@ -240,8 +240,8 @@
     "timestamp": "2025-11-28T14:45:39.737Z",
     "data": {
       "id": "a9e9b84f-e9ba-4f91-b147-e48a7962ef3d",
-      "action": "BLOCK",
-      "notes": "Analyst manual review"
+      "action": "ALLOW",
+      "notes": "INJECTED_BY_HACKER"
     },
     "previousHash": "184efc2da41187322ce55560c4b14d6db19b7f6595d2ee5e538c29f42bf581fc",
     "hash": "a68abacf914ce65c734f7f2ac5faf6cba8cb896903239f0ca712f336d1494ff8",
@@ -255,7 +255,7 @@
     "data": {
       "id": "66eb6e7f-7ad5-4816-91b1-720f9b23e2bb",
       "action": "ALLOW",
-      "notes": "Analyst manual review"
+      "notes": "INJECTED_BY_HACKER"
     },
     "previousHash": "a68abacf914ce65c734f7f2ac5faf6cba8cb896903239f0ca712f336d1494ff8",
     "hash": "f8eaa308ced5891598d867c0fc30d45b0aa0cd52489b423c2e53b641fa512611",
@@ -269,7 +269,7 @@
     "data": {
       "id": "1e7efc13-547c-4a98-b930-823300fe4fee",
       "action": "ALLOW",
-      "notes": "Analyst manual review"
+      "notes": "INJECTED_BY_HACKER"
     },
     "previousHash": "f8eaa308ced5891598d867c0fc30d45b0aa0cd52489b423c2e53b641fa512611",
     "hash": "94e7f994e9ef2bc2cfa4f7038bf4731e086c976a5b0e449ce7336b9608ace014",
@@ -282,8 +282,8 @@
     "timestamp": "2025-11-28T16:18:46.695Z",
     "data": {
       "id": "2b544726-1c40-4068-8071-d8babae50b76",
-      "action": "BLOCK",
-      "notes": "Analyst manual review"
+      "action": "ALLOW",
+      "notes": "INJECTED_BY_HACKER"
     },
     "previousHash": "94e7f994e9ef2bc2cfa4f7038bf4731e086c976a5b0e449ce7336b9608ace014",
     "hash": "5e82ec34e86ac4863e6e2113049b0fce0ac60c09f2ffe292353dad2254eed703",
@@ -325,7 +325,7 @@
     "data": {
       "id": "7dec7c2e-681b-4c4c-bea8-8aea850e0d3f",
       "action": "ALLOW",
-      "notes": "Analyst manual review"
+      "notes": "INJECTED_BY_HACKER"
     },
     "previousHash": "fcf6848b253741dbb3ec7f4a3d404b62952b9a1c4cefb022939a8ab994c8cec3",
     "hash": "25f0de5f5a566089da577b87cf4779b48e1d4e790843770fec7be07d5a432411",
@@ -338,8 +338,8 @@
     "timestamp": "2025-11-28T16:50:37.509Z",
     "data": {
       "id": "06afd43e-3351-41bb-93f0-fb6a9c5716ca",
-      "action": "BLOCK",
-      "notes": "Analyst manual review"
+      "action": "ALLOW",
+      "notes": "INJECTED_BY_HACKER"
     },
     "previousHash": "25f0de5f5a566089da577b87cf4779b48e1d4e790843770fec7be07d5a432411",
     "hash": "c7f87df526eb56dd58db0be1173a96a87fa777344fdd63520e24e73dfc09dcb1",
@@ -352,8 +352,8 @@
     "timestamp": "2025-11-28T16:50:49.148Z",
     "data": {
       "id": "e4fe6a91-d148-4d66-b754-19d3326acdd1",
-      "action": "BLOCK",
-      "notes": "Analyst manual review"
+      "action": "ALLOW",
+      "notes": "INJECTED_BY_HACKER"
     },
     "previousHash": "c7f87df526eb56dd58db0be1173a96a87fa777344fdd63520e24e73dfc09dcb1",
     "hash": "a07165df955e6e7f2feaea10d94c076f2a46cf2e65ba76393f261c76701c6ac6",
@@ -366,8 +366,8 @@
     "timestamp": "2025-11-28T16:52:30.365Z",
     "data": {
       "id": "cefafaef-9284-4f24-aa0b-292a9bbfc01c",
-      "action": "BLOCK",
-      "notes": "Analyst manual review"
+      "action": "ALLOW",
+      "notes": "INJECTED_BY_HACKER"
     },
     "previousHash": "a07165df955e6e7f2feaea10d94c076f2a46cf2e65ba76393f261c76701c6ac6",
     "hash": "3f6d967935e53935c28dbbf1f9cf0c25577351ad85f6fea1607aee8354fb6c58",
@@ -381,7 +381,7 @@
     "data": {
       "id": "994af125-3128-451d-98ba-c31ff1655c4a",
       "action": "ALLOW",
-      "notes": "Analyst manual review"
+      "notes": "INJECTED_BY_HACKER"
     },
     "previousHash": "3f6d967935e53935c28dbbf1f9cf0c25577351ad85f6fea1607aee8354fb6c58",
     "hash": "d2239ead475772206a3d3e43f7bd1864f51d7522f5972856636d331f9bd5cdaf",
@@ -394,8 +394,8 @@
     "timestamp": "2025-11-28T18:12:02.954Z",
     "data": {
       "id": "b28c7307-e735-41fa-9472-41ab4df6dc16",
-      "action": "BLOCK",
-      "notes": "Analyst manual review"
+      "action": "ALLOW",
+      "notes": "INJECTED_BY_HACKER"
     },
     "previousHash": "d2239ead475772206a3d3e43f7bd1864f51d7522f5972856636d331f9bd5cdaf",
     "hash": "391cff91ff7a6208b418c455974fab291439904e7a4884509e2f78497bc903b4",
@@ -408,8 +408,8 @@
     "timestamp": "2025-11-28T18:25:18.724Z",
     "data": {
       "id": "36204934-c537-40a9-8c71-92e6a83f7f33",
-      "action": "BLOCK",
-      "notes": "Analyst manual review"
+      "action": "ALLOW",
+      "notes": "INJECTED_BY_HACKER"
     },
     "previousHash": "391cff91ff7a6208b418c455974fab291439904e7a4884509e2f78497bc903b4",
     "hash": "c45f3b0ae5d3929dfe63ddde372a789475cebcecddf66e8bb16f02c91d93147c",
@@ -423,7 +423,7 @@
     "data": {
       "id": "a1578449-be1d-4cb3-82ee-f219f8ba31f9",
       "action": "ALLOW",
-      "notes": "Analyst manual review"
+      "notes": "INJECTED_BY_HACKER"
     },
     "previousHash": "c45f3b0ae5d3929dfe63ddde372a789475cebcecddf66e8bb16f02c91d93147c",
     "hash": "ef4433302e7467b660a02b284468539745881140c3a0faf7d92f847e61ba8fb8",
@@ -437,7 +437,7 @@
     "data": {
       "id": "6a1b3368-fbbc-429b-9f37-7ea4bc58d6d6",
       "action": "ALLOW",
-      "notes": "Analyst manual review"
+      "notes": "INJECTED_BY_HACKER"
     },
     "previousHash": "ef4433302e7467b660a02b284468539745881140c3a0faf7d92f847e61ba8fb8",
     "hash": "15595ad05575fc5a6b295a1f6315b4e9d8dd66a65970f25be4bb10ec82130a89",
@@ -451,7 +451,7 @@
     "data": {
       "id": "6f59cb19-ddb2-4efc-96af-f38d2c8b6cd4",
       "action": "ALLOW",
-      "notes": "Analyst manual review"
+      "notes": "INJECTED_BY_HACKER"
     },
     "previousHash": "15595ad05575fc5a6b295a1f6315b4e9d8dd66a65970f25be4bb10ec82130a89",
     "hash": "5bd4dbfa8be632f128129eae6562053c27638c2c40b6049e9db422c17d79acb6",
@@ -465,7 +465,7 @@
     "data": {
       "id": "174456eb-ea10-41ec-990b-40ffcf08d1b9",
       "action": "ALLOW",
-      "notes": "Analyst manual review"
+      "notes": "INJECTED_BY_HACKER"
     },
     "previousHash": "5bd4dbfa8be632f128129eae6562053c27638c2c40b6049e9db422c17d79acb6",
     "hash": "27d2b75fb5e2187adb1c64d27164b10680a879e931fae424acc26c0c2bb0f07c",
@@ -478,8 +478,8 @@
     "timestamp": "2026-01-28T14:07:56.858Z",
     "data": {
       "id": "192c40ab-41e9-4f09-8c08-d2bc3377f2cb",
-      "action": "BLOCK",
-      "notes": "Analyst manual review via RealtimeGuard Terminal"
+      "action": "ALLOW",
+      "notes": "INJECTED_BY_HACKER"
     },
     "previousHash": "27d2b75fb5e2187adb1c64d27164b10680a879e931fae424acc26c0c2bb0f07c",
     "hash": "7251a4321a3d276dc82cb26d5fb5868cd77c78ca6cfb4d042876bfec79b897a6",
@@ -492,8 +492,8 @@
     "timestamp": "2026-01-28T14:23:43.961Z",
     "data": {
       "id": "d7004c6c-6faa-44c5-8dae-cff9aeaf9081",
-      "action": "BLOCK",
-      "notes": "Analyst manual review via RealtimeGuard Terminal"
+      "action": "ALLOW",
+      "notes": "INJECTED_BY_HACKER"
     },
     "previousHash": "7251a4321a3d276dc82cb26d5fb5868cd77c78ca6cfb4d042876bfec79b897a6",
     "hash": "015925c950ccb13244ed0dae873742d165773e002fa67f858be6092781b1b44a",
@@ -534,13 +534,111 @@
     "timestamp": "2026-01-28T15:59:24.778Z",
     "data": {
       "id": "e8bfca0e-28b7-4b83-bda0-f595d219415a",
-      "action": "BLOCK",
-      "notes": "Analyst manual review via RealtimeGuard Terminal"
+      "action": "ALLOW",
+      "notes": "INJECTED_BY_HACKER"
     },
     "previousHash": "327c3e1c81dec91c13f6d728092e61760315549d7b6433b551f93fbb3d9f63be",
     "hash": "2e743e8e108e5425047300ad49ece0f638787fcb2e773f445dfe5eb83427bd6f",
     "nonce": 0,
     "signature": "0x519232ad086d31579fcc5bed226a68dadad2fbb6b6de8f4654c009966b372ff25a78909e83e3d53e40c0fc9c93e169f2834b46c42fea2a8783106dc4e7b886511b",
     "signer": "0xAba690AfC950087d8692868369a802a3FB544a0f"
+  },
+  {
+    "index": 40,
+    "timestamp": "2026-04-15T13:46:40.601Z",
+    "data": {
+      "id": "68cfaf04-1735-4bdc-9022-df0b4971f30b",
+      "action": "BLOCK",
+      "notes": "Analyst manual review via RealtimeGuard Terminal"
+    },
+    "previousHash": "2e743e8e108e5425047300ad49ece0f638787fcb2e773f445dfe5eb83427bd6f",
+    "hash": "90eafc808b902087b21983261ee5ca77303616620331a80782e8fff6cdaede7e",
+    "nonce": 0,
+    "signature": "0x25db3e9f9490ffa2892ae95d9ffc96d847cc948bca9d5d199cd3f119c240d8e6466b40b69df5d0c471d26893a6398bb411e7b07d0d793cd63593f5f2c223d8751c",
+    "signer": "0x2308aD4Aa803E6232Cc8198a4cbaE07628664168"
+  },
+  {
+    "index": 41,
+    "timestamp": "2026-04-15T14:04:01.324Z",
+    "data": {
+      "id": "e320301e-5b52-4607-a82b-3d9113727b1d",
+      "action": "BLOCK",
+      "notes": "Analyst manual review via RealtimeGuard Terminal"
+    },
+    "previousHash": "90eafc808b902087b21983261ee5ca77303616620331a80782e8fff6cdaede7e",
+    "hash": "063c4c77fefd1c0ddf21ae162552a2d5c59d52295aff54d106ab4eaaf8002f08",
+    "nonce": 0,
+    "signature": "0x94c68cf68cd87a1ba2afc145df1d0d8685f2237e7291a3c5b0db5c5ce7a8d11c56371e35486251aac5381319fe4b4619c1ebc14a690221679c632986ab462fce1b",
+    "signer": "0xb6d396a2e27bBccdbb9464E26e8432a92bB2DCA0"
+  },
+  {
+    "index": 42,
+    "timestamp": "2026-04-15T14:14:33.037Z",
+    "data": {
+      "id": "753a2625-377d-49fd-9400-223b06c42cc1",
+      "action": "ALLOW",
+      "notes": "INJECTED_BY_HACKER"
+    },
+    "previousHash": "063c4c77fefd1c0ddf21ae162552a2d5c59d52295aff54d106ab4eaaf8002f08",
+    "hash": "ef736b3f0a3682fde5727999154e111a78f5eec5710eb669bb0178ebc05fae38",
+    "nonce": 0,
+    "signature": "0xcdd8ea6ccd10982c8d6ac62a03af67449e0cd7381aa2a276a06e8522b55ea5eb5d876ebc2f79bdc89b9093cac9a72c18784ceaa25c7c5c98d53b8c78597251f31b",
+    "signer": "0x6B4CF2Cd020414b91fA8a1a0eDD0f69a5c329D32"
+  },
+  {
+    "index": 43,
+    "timestamp": "2026-04-15T14:20:09.868Z",
+    "data": {
+      "id": "295cf012-3d43-41ee-a431-caf4218b23e8",
+      "action": "BLOCK",
+      "notes": "Analyst manual review via RealtimeGuard Terminal"
+    },
+    "previousHash": "ef736b3f0a3682fde5727999154e111a78f5eec5710eb669bb0178ebc05fae38",
+    "hash": "eb12aa9758a7d5540d003d01c93744034d673381933a76a4ed29deb297d24315",
+    "nonce": 0,
+    "signature": "0x4fdce2f1d0c06950ed6acc9eb432e87d94c7f6e91fc89267d465e76a3aca502d4b3fdae5e84eaa96f6985c9bb5b4f308c680baf755eee543e00df1729d97aed31c",
+    "signer": "0x1bc0A5af5c779163cB7b4d91631D7E08AFdc3165"
+  },
+  {
+    "index": 44,
+    "timestamp": "2026-04-15T14:20:26.995Z",
+    "data": {
+      "id": "a21db2c9-6626-424f-9170-d2ea76168672",
+      "action": "BLOCK",
+      "notes": "Analyst manual review via RealtimeGuard Terminal"
+    },
+    "previousHash": "eb12aa9758a7d5540d003d01c93744034d673381933a76a4ed29deb297d24315",
+    "hash": "694495ea49060f27f79647c9a3f9db8f89b006f6da75e5b00f5e0f5c9062a284",
+    "nonce": 0,
+    "signature": "0x85d4c1d12390774e415f3f027c32e02deceaf2b8169c12c5864a8a9a5436130609ba8e7e4b3e0fdbad44e658e6339dc3688833bb6ef05800642acce81fdd819c1c",
+    "signer": "0x4BEe0F338b31e82ce2e9A2050429473528B8783e"
+  },
+  {
+    "index": 45,
+    "timestamp": "2026-04-15T14:33:48.388Z",
+    "data": {
+      "id": "6a5348eb-362b-4c9d-b441-e6a58a32cdbe",
+      "action": "BLOCK",
+      "notes": "Analyst manual review via RealtimeGuard Terminal"
+    },
+    "previousHash": "694495ea49060f27f79647c9a3f9db8f89b006f6da75e5b00f5e0f5c9062a284",
+    "hash": "db87c9cd2ccbaef77008bb65ebec744c166817266b77c0bd8b070f9161614f66",
+    "nonce": 0,
+    "signature": "0x15a98bbc9a1200f3768ec6cd7e0c1f1779cdf6b20ed9e59a68417c94d0e715146316e8cc0e29adde5848a838189ed71c2a5e2f983f0462e4bf71e4535d2473241b",
+    "signer": "0x1B4F90a085492c3347B85413bDEc3Be25e29d303"
+  },
+  {
+    "index": 46,
+    "timestamp": "2026-04-15T14:34:23.922Z",
+    "data": {
+      "id": "4c6bc17d-68a7-4671-9b59-9d37f3010619",
+      "action": "BLOCK",
+      "notes": "Analyst manual review via RealtimeGuard Terminal"
+    },
+    "previousHash": "db87c9cd2ccbaef77008bb65ebec744c166817266b77c0bd8b070f9161614f66",
+    "hash": "97b77b3bd9aa006868695d639f2adaa1aa3e630c0a66d456d64aa30f8e11cd18",
+    "nonce": 0,
+    "signature": "0x561d519cffff84d0af1b66c6c69bdf80c600fcc814ed570d8b5fe69f627fddb022f1a24f9a8959da5b408e33308ebf552fa4d7523ad0741412d7ffb75a29257f1b",
+    "signer": "0x1B4F90a085492c3347B85413bDEc3Be25e29d303"
   }
 ]
