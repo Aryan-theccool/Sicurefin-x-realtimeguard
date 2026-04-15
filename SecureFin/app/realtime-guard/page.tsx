@@ -8,6 +8,7 @@ import dynamic from 'next/dynamic'
 import { LiveFeed } from "@/components/realtime-guard/live-feed"
 import { AuditLog } from "@/components/realtime-guard/audit-log"
 import { ReportPanel } from "@/components/realtime-guard/report-panel"
+import { TamperModal } from "@/components/realtime-guard/tamper-modal"
 
 // Load MapView dynamically to avoid SSR issues
 const MapView = dynamic(() => import('@/components/realtime-guard/map-view'), { ssr: false });
@@ -17,6 +18,8 @@ export default function RealtimeGuardPage() {
     const [selectedTransaction, setSelectedTransaction] = useState<any>(null)
     const [isAuditLogOpen, setIsAuditLogOpen] = useState(false)
     const [isConnected, setIsConnected] = useState(false)
+    const [tamperData, setTamperData] = useState<any>(null)
+    const [isTamperModalOpen, setIsTamperModalOpen] = useState(false)
 
     useEffect(() => {
         const wsUrl = 'ws://localhost:4000';
@@ -38,6 +41,12 @@ export default function RealtimeGuardPage() {
                     }
                 } else if (message.type === 'TX') {
                     setTransactions(prev => [message.data, ...prev].slice(0, 50));
+                } else if (message.type === 'BLOCKCHAIN_TAMPERED') {
+                    setTamperData(message.data);
+                    setIsTamperModalOpen(true);
+                } else if (message.type === 'BLOCKCHAIN_RECOVERY') {
+                    setIsTamperModalOpen(false);
+                    setTamperData(null);
                 }
             } catch (e) {
                 console.error('Error parsing WS message:', e);
@@ -51,6 +60,24 @@ export default function RealtimeGuardPage() {
 
         return () => ws.close();
     }, [selectedTransaction]);
+
+    const handleSimulateAttack = async () => {
+        try {
+            await fetch('http://localhost:4000/api/blockchain/simulate-attack', { method: 'POST' });
+        } catch (e) {
+            console.error('Failed to simulate');
+        }
+    }
+
+    const handleRestoreChain = async () => {
+        try {
+            await fetch('http://localhost:4000/api/blockchain/restore', { method: 'POST' });
+            setIsTamperModalOpen(false);
+            setTamperData(null);
+        } catch (e) {
+            console.error('Failed to restore');
+        }
+    }
 
     const fraudCount = transactions.filter(t => t.fraud_score > 80).length;
 
@@ -96,6 +123,13 @@ export default function RealtimeGuardPage() {
                         >
                             <ShieldAlert className="h-4 w-4 mr-2 group-hover:animate-bounce" />
                             Audit Log
+                        </Button>
+                        <Button
+                            size="sm"
+                            onClick={handleSimulateAttack}
+                            className="bg-red-500/10 hover:bg-red-600/30 text-red-500 border border-red-900/50 font-bold"
+                        >
+                            🔥 Simulate Breach
                         </Button>
                         <div className="flex items-center gap-2 text-[10px] font-bold text-green-700 bg-green-950/30 px-3 py-1.5 rounded border border-green-900/50">
                             <div className={`w-1.5 h-1.5 rounded-full ${isConnected ? 'bg-green-500 shadow-[0_0_10px_rgba(34,197,94,1)] animate-pulse' : 'bg-red-500'}`} />
@@ -179,6 +213,11 @@ export default function RealtimeGuardPage() {
                     </div>
                 </div>
             </main>
+            <TamperModal
+                isOpen={isTamperModalOpen}
+                onClose={() => setIsTamperModalOpen(false)}
+                data={tamperData}
+            />
         </div>
     )
 }

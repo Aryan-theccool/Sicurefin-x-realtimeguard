@@ -7,6 +7,7 @@ import { Shield, TrendingUp, AlertCircle, Wallet, Radar as RadarIcon, Plus, Tras
 import Link from "next/link"
 import React, { useState } from "react"
 import { AddExpenseModal } from "@/components/add-expense-modal"
+import { TamperModal } from "@/components/realtime-guard/tamper-modal"
 import { Bar, BarChart, CartesianGrid, XAxis, Radar, RadarChart, PolarGrid, PolarAngleAxis } from "recharts"
 import {
     ChartConfig,
@@ -45,6 +46,8 @@ export default function DashboardPage() {
         blocks: 412,
         analyzed: 15204
     })
+    const [tamperData, setTamperData] = useState<any>(null)
+    const [isTamperModalOpen, setIsTamperModalOpen] = useState(false)
 
     // WebSocket for Admin Live Stats
     React.useEffect(() => {
@@ -70,6 +73,13 @@ export default function DashboardPage() {
                         analyzed: prev.analyzed + history.length,
                         threats: prev.threats + history.filter((t: any) => t.fraud_score > 80).length
                     }));
+                } else if (message.type === 'BLOCKCHAIN_TAMPERED') {
+                    console.warn('Tampering detected via WebSocket!');
+                    setTamperData(message.data);
+                    setIsTamperModalOpen(true);
+                } else if (message.type === 'BLOCKCHAIN_RECOVERY') {
+                    setIsTamperModalOpen(false);
+                    setTamperData(null);
                 }
             } catch (e) {
                 console.error('WS Error:', e);
@@ -77,6 +87,24 @@ export default function DashboardPage() {
         };
         return () => ws.close();
     }, [role]);
+
+    const handleSimulateAttack = async () => {
+        try {
+            await fetch('http://localhost:4000/api/blockchain/simulate-attack', { method: 'POST' });
+        } catch (e) {
+            console.error('Failed to simulate attack');
+        }
+    }
+
+    const handleRestoreChain = async () => {
+        try {
+            await fetch('http://localhost:4000/api/blockchain/restore', { method: 'POST' });
+            setIsTamperModalOpen(false);
+            setTamperData(null);
+        } catch (e) {
+            console.error('Failed to restore chain');
+        }
+    }
 
     const handleAddExpense = (newExpense: any) => {
         setExpenses(prev => [{
@@ -167,6 +195,26 @@ export default function DashboardPage() {
                                     Launch RealtimeGuard Forensics
                                 </Button>
                             </Link>
+                        </div>
+
+                        {/* Simulation Control (Admin Only) */}
+                        <div className="flex gap-4 p-4 bg-slate-900/50 border border-slate-800 rounded-2xl">
+                            <Button
+                                onClick={handleSimulateAttack}
+                                className="bg-red-500/10 hover:bg-red-500/20 text-red-500 border border-red-500/30 font-bold gap-2"
+                            >
+                                <AlertCircle className="h-4 w-4" />
+                                Simulate Security Breach
+                            </Button>
+                            {tamperData && (
+                                <Button
+                                    onClick={handleRestoreChain}
+                                    className="bg-green-500/10 hover:bg-green-500/20 text-green-500 border border-green-500/30 font-bold gap-2"
+                                >
+                                    <Shield className="h-4 w-4" />
+                                    Restore Integrity
+                                </Button>
+                            )}
                         </div>
 
                         {/* Top Stats Grid */}
@@ -484,6 +532,11 @@ export default function DashboardPage() {
                 isOpen={isAddExpenseOpen}
                 onClose={() => setIsAddExpenseOpen(false)}
                 onAddExpense={handleAddExpense}
+            />
+            <TamperModal
+                isOpen={isTamperModalOpen}
+                onClose={() => setIsTamperModalOpen(false)}
+                data={tamperData}
             />
         </div>
     )
