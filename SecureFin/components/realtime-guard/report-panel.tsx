@@ -23,9 +23,12 @@ export function ReportPanel({ transaction }: ReportPanelProps) {
 
     if (!transaction) {
         return (
-            <div className="bg-black/50 border border-green-900/30 p-6 rounded-lg h-full flex flex-col items-center justify-center text-green-900">
-                <AlertCircle className="h-12 w-12 mb-4 opacity-20" />
-                <p className="text-sm font-bold tracking-widest uppercase opacity-40">Awaiting Signal Selection</p>
+            <div className="bg-slate-900/30 border border-white/5 p-8 rounded-[2rem] h-full flex flex-col items-center justify-center text-slate-600 shadow-2xl backdrop-blur-sm">
+                <div className="relative mb-6">
+                    <AlertCircle className="h-16 w-16 opacity-10" />
+                    <div className="absolute inset-0 blur-2xl bg-white/5 animate-pulse" />
+                </div>
+                <p className="text-[10px] font-black tracking-[0.3em] uppercase opacity-40 text-center">Interpreting Node Telemetry...<br/>Select Signal</p>
             </div>
         );
     }
@@ -39,7 +42,7 @@ export function ReportPanel({ transaction }: ReportPanelProps) {
                 body: JSON.stringify({
                     transaction_id: transaction.id,
                     action,
-                    notes: 'Analyst manual review via RealtimeGuard Terminal'
+                    notes: 'Analyst manual review via Realguard Interface'
                 })
             });
 
@@ -57,49 +60,58 @@ export function ReportPanel({ transaction }: ReportPanelProps) {
     const isHighRisk = transaction.fraud_score > 80;
 
     return (
-        <div className="bg-black/80 border border-green-900 rounded-lg p-6 h-full flex flex-col relative overflow-hidden group">
-            {/* Scanner Animation Effect */}
-            <div className="absolute top-0 left-0 w-full h-[2px] bg-green-500/30 animate-[scan_3s_linear_infinite] shadow-[0_0_15px_rgba(34,197,94,0.5)] z-0" />
+        <div className="bg-slate-900/60 border border-white/5 rounded-[2rem] p-8 h-full flex flex-col relative overflow-hidden group shadow-2xl backdrop-blur-xl">
+            {/* Ambient Animated Gradient */}
+            <div className="absolute -top-24 -right-24 w-48 h-48 bg-emerald-500/10 blur-[100px] pointer-events-none group-hover:bg-emerald-500/20 transition-all duration-700" />
+            <div className="absolute -bottom-24 -left-24 w-48 h-48 bg-indigo-500/10 blur-[100px] pointer-events-none group-hover:bg-indigo-500/20 transition-all duration-700" />
+
+            {/* Shimmer Scanner Effect */}
+            <div className="absolute top-0 left-0 w-full h-[1px] bg-gradient-to-r from-transparent via-emerald-500/50 to-transparent animate-[shimmer_4s_infinite] z-0" />
 
             <div className="relative z-10 flex flex-col h-full">
-                <h3 className="text-green-500 text-xs font-bold uppercase tracking-[0.2em] mb-6 flex items-center gap-2">
-                    <Activity className="h-4 w-4 animate-pulse" /> TRANSACTION FORENSICS
-                </h3>
+                <div className="flex justify-between items-center mb-8">
+                    <h3 className="text-slate-400 text-xs font-black uppercase tracking-[0.3em] flex items-center gap-3">
+                        <Activity className="h-4 w-4 text-emerald-500 animate-pulse" /> Signal Analysis
+                    </h3>
+                    <div className="px-2 py-1 bg-white/5 rounded-md border border-white/5 text-[8px] font-bold text-slate-500">REF_TERMINAL_2.1</div>
+                </div>
 
-                <div className="flex-1 space-y-6">
-                    <div className="p-4 bg-green-950/20 rounded border border-green-900/50">
-                        <div className="flex justify-between items-center mb-1">
-                            <span className="text-green-900 text-[10px] font-bold">SIGNAL ID</span>
-                            <span className="font-mono text-[10px] text-green-500/70">{transaction.id}</span>
+                <div className="flex-1 space-y-8">
+                    <div className="p-6 bg-white/5 rounded-3xl border border-white/5 relative overflow-hidden group/card shadow-inner">
+                        <div className="absolute inset-0 bg-gradient-to-br from-white/5 to-transparent opacity-0 group-hover/card:opacity-100 transition-opacity" />
+                        <div className="flex justify-between items-center mb-2 relative z-10">
+                            <span className="text-slate-600 text-[9px] font-black tracking-widest uppercase">Telemetry ID</span>
+                            <span className="font-mono text-[9px] text-emerald-500/60 lowercase">{transaction.id}</span>
                         </div>
-                        <div className="text-2xl font-bold text-white mb-1 tracking-tight">
+                        <div className="text-4xl font-black text-white mb-2 tracking-tighter relative z-10">
                             ₹{transaction.amount?.toLocaleString()}
                         </div>
-                        <div className="text-sm text-green-300 font-bold uppercase tracking-wider">
+                        <div className="text-md font-black text-slate-200 uppercase tracking-tight relative z-10">
                             {transaction.merchant}
                         </div>
-                        <div className="text-xs text-green-700 mt-1">
-                            LOC: {transaction.location}
+                        <div className="flex items-center gap-2 text-[10px] text-slate-500 mt-4 font-bold uppercase tracking-widest relative z-10">
+                            <span className="h-1 w-1 rounded-full bg-indigo-500" />
+                            Grid Node: {transaction.location}
                         </div>
                     </div>
 
-                    <div>
-                        <h4 className="text-[10px] font-bold text-green-800 uppercase tracking-widest mb-3">Anomaly Detection Matrix</h4>
-                        <div className="space-y-2">
+                    <div className="space-y-4">
+                        <h4 className="text-[10px] font-black text-slate-600 uppercase tracking-[0.2em] px-1">Heuristic Matrix</h4>
+                        <div className="space-y-2.5">
                             {transaction.rule_triggers && transaction.rule_triggers.length > 0 ? (
                                 transaction.rule_triggers.map((trigger, index) => (
-                                    <div key={index} className="flex items-center gap-2 text-red-400 text-[11px] bg-red-950/30 p-2 rounded border border-red-900/20 font-bold">
-                                        <ChevronRight size={14} className="shrink-0" />
+                                    <div key={index} className="flex items-center gap-3 text-rose-400 text-[11px] bg-rose-500/5 p-3 rounded-2xl border border-rose-500/10 font-bold group/rule hover:bg-rose-500/10 transition-colors">
+                                        <div className="h-1.5 w-1.5 rounded-full bg-rose-500 shadow-[0_0_8px_rgba(244,63,94,0.5)]" />
                                         {trigger.replace(/_/g, ' ')}
                                     </div>
                                 ))
                             ) : isHighRisk ? (
-                                <div className="flex items-center gap-2 text-yellow-500 text-[11px] bg-yellow-950/30 p-2 rounded border border-yellow-900/20 font-bold">
-                                    <AlertCircle size={14} className="shrink-0" />
-                                    Heuristic Risk Threshold Breached
+                                <div className="flex items-center gap-3 text-amber-400 text-[11px] bg-amber-500/5 p-3 rounded-2xl border border-amber-500/10 font-bold">
+                                    <AlertCircle size={14} className="shrink-0 animate-pulse" />
+                                    Threshold Violation Detected
                                 </div>
                             ) : (
-                                <div className="flex items-center gap-2 text-green-400 text-[11px] bg-green-950/30 p-2 rounded border border-green-900/20 font-bold">
+                                <div className="flex items-center gap-3 text-emerald-400 text-[11px] bg-emerald-500/5 p-3 rounded-2xl border border-emerald-500/10 font-bold">
                                     <CheckCircle size={14} className="shrink-0" />
                                     Baseline Integrity Verified
                                 </div>
@@ -108,12 +120,12 @@ export function ReportPanel({ transaction }: ReportPanelProps) {
                     </div>
                 </div>
 
-                <div className="mt-8 pt-6 border-t border-green-900/50">
-                    <h4 className="text-[10px] font-bold text-green-800 uppercase tracking-widest mb-4">Command Actions</h4>
+                <div className="mt-10 pt-8 border-t border-white/5">
+                    <h4 className="text-[10px] font-black text-slate-600 uppercase tracking-[0.2em] mb-5 px-1">Enforcement Protcols</h4>
 
                     {lastAction ? (
-                        <div className={`text-center py-3 rounded border font-bold text-sm animate-pulse ${lastAction === 'BLOCK' ? 'bg-red-500/10 border-red-500/20 text-red-400' : 'bg-green-500/10 border-green-500/20 text-green-400'}`}>
-                            {lastAction === 'BLOCK' ? 'THREAT NEUTRALIZED' : 'LEGITIMACY RECORDED'}
+                        <div className={`text-center py-4 rounded-2xl border font-black text-[10px] tracking-widest uppercase animate-pulse shadow-2xl ${lastAction === 'BLOCK' ? 'bg-rose-500/20 border-rose-500/30 text-rose-400' : 'bg-emerald-500/20 border-emerald-500/30 text-emerald-400'}`}>
+                            {lastAction === 'BLOCK' ? 'Threat Neutralized' : 'Validation Recorded'}
                         </div>
                     ) : (
                         <div className="grid grid-cols-2 gap-4">
@@ -121,19 +133,19 @@ export function ReportPanel({ transaction }: ReportPanelProps) {
                                 onClick={() => handleAction('BLOCK')}
                                 disabled={submitting}
                                 variant="destructive"
-                                className="bg-red-900/20 border-red-800 hover:bg-red-600 hover:text-white text-red-500 h-10 font-bold  uppercase tracking-tighter text-xs"
+                                className="bg-rose-500/10 border-rose-500/20 hover:bg-rose-600 text-rose-500 hover:text-white h-12 font-black uppercase tracking-widest text-[10px] rounded-2xl transition-all shadow-lg"
                             >
                                 {submitting ? <Loader2 className="h-4 w-4 animate-spin" /> : <XCircle className="h-4 w-4 mr-2" />}
-                                Block Threat
+                                Neutralize
                             </Button>
                             <Button
                                 onClick={() => handleAction('ALLOW')}
                                 disabled={submitting}
                                 variant="outline"
-                                className="bg-green-900/20 border-green-800 hover:bg-green-600 hover:text-white text-green-500 h-10 font-bold uppercase tracking-tighter text-xs"
+                                className="bg-emerald-500/10 border-emerald-500/20 hover:bg-emerald-600 text-emerald-500 hover:text-white h-12 font-black uppercase tracking-widest text-[10px] rounded-2xl transition-all shadow-lg"
                             >
                                 {submitting ? <Loader2 className="h-4 w-4 animate-spin" /> : <CheckCircle className="h-4 w-4 mr-2" />}
-                                Mark Safe
+                                Validate
                             </Button>
                         </div>
                     )}
@@ -141,13 +153,15 @@ export function ReportPanel({ transaction }: ReportPanelProps) {
             </div>
 
             <style jsx>{`
-                @keyframes scan {
-                    0% { top: 0; opacity: 0; }
-                    50% { opacity: 1; }
-                    100% { top: 100%; opacity: 0; }
+                @keyframes shimmer {
+                    0% { transform: translateY(0); opacity: 0; }
+                    20% { opacity: 0.5; }
+                    80% { opacity: 0.5; }
+                    100% { transform: translateY(650px); opacity: 0; }
                 }
             `}</style>
         </div>
+
     );
 }
 
