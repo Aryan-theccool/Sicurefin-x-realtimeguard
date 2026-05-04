@@ -8,7 +8,7 @@ import RiskGauge from './components/RiskGauge';
 import TamperModal from './components/TamperModal';
 import { ShieldAlert } from 'lucide-react';
 
-import LoginPage from './components/LoginPage';
+import { WS_URL, ENDPOINTS } from './config';
 
 function App() {
     const [isLoggedIn, setIsLoggedIn] = useState(false);
@@ -21,8 +21,7 @@ function App() {
     const [verificationData, setVerificationData] = useState(null);
 
     useEffect(() => {
-        const wsUrl = import.meta.env.VITE_WS_URL || 'ws://localhost:4001';
-        const ws = new WebSocket(wsUrl);
+        const ws = new WebSocket(WS_URL);
 
         ws.onopen = () => {
             console.log('Connected to WebSocket');
@@ -59,7 +58,7 @@ function App() {
 
     const verifyBlockchain = async () => {
         try {
-            const response = await fetch('http://localhost:4001/api/blockchain/verify');
+            const response = await fetch(ENDPOINTS.VERIFY);
             const data = await response.json();
 
             if (data.valid) {

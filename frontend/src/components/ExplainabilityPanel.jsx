@@ -1,5 +1,5 @@
-import React, { useState } from 'react';
 import { AlertCircle, CheckCircle, XCircle, ChevronRight } from 'lucide-react';
+import { ENDPOINTS } from '../config';
 
 export default function ExplainabilityPanel({ transaction }) {
     const [feedbackSent, setFeedbackSent] = useState(false);
@@ -14,7 +14,7 @@ export default function ExplainabilityPanel({ transaction }) {
 
     const handleAction = async (action) => {
         try {
-            await fetch('http://localhost:4001/api/action', {
+            await fetch(ENDPOINTS.ACTION, {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify({

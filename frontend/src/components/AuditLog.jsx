@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { X, ShieldAlert, CheckCircle, Clock, Link, Lock } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
 import TamperModal from './TamperModal';
+import { ENDPOINTS } from '../config';
 
 export default function AuditLog({ isOpen, onClose }) {
     const [logs, setLogs] = useState([]);
@@ -18,7 +19,7 @@ export default function AuditLog({ isOpen, onClose }) {
     const fetchLogs = async () => {
         setLoading(true);
         try {
-            const res = await fetch('http://localhost:4001/api/actions');
+            const res = await fetch(ENDPOINTS.ACTIONS);
             const data = await res.json();
             setLogs(data);
         } catch (e) {
@@ -31,7 +32,7 @@ export default function AuditLog({ isOpen, onClose }) {
     const verifyChain = async () => {
         setVerifying(true);
         try {
-            const res = await fetch('http://localhost:4001/api/blockchain/verify');
+            const res = await fetch(ENDPOINTS.VERIFY);
             const data = await res.json();
             console.log("Verification Result:", data);
             if (data.valid) {
