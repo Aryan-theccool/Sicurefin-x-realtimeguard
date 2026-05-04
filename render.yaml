@@ -1,0 +1,15 @@
+services:
+  - type: web
+    name: code-odyssey-backend
+    env: docker
+    rootDir: backend
+    plan: free
+    envVars:
+      - key: PORT
+        value: 4000
+      - key: NODE_ENV
+        value: production
+      - key: ENABLE_MOCK_DATA
+        value: "true"
+      - key: WS_TOKEN
+        value: mysupersecret
