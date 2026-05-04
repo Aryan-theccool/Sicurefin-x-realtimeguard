@@ -7,7 +7,7 @@ import ExplainabilityPanel from './components/ExplainabilityPanel';
 import RiskGauge from './components/RiskGauge';
 import TamperModal from './components/TamperModal';
 import { ShieldAlert } from 'lucide-react';
-
+import LoginPage from './components/LoginPage';
 import { WS_URL, ENDPOINTS } from './config';
 
 function App() {
