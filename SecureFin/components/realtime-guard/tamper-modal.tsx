@@ -8,7 +8,7 @@ import { Button } from '@/components/ui/button';
 interface TamperModalProps {
     isOpen: boolean;
     onClose: () => void;
-    onRepair: () => void;
+    onRepair?: () => void;
     data: any;
 }
 
@@ -38,12 +38,14 @@ export function TamperModal({ isOpen, onClose, onRepair, data }: TamperModalProp
                                 </p>
                             </div>
                         </div>
-                        <Button 
-                            onClick={onRepair}
-                            className="bg-rose-600 hover:bg-rose-500 text-white font-black px-8 py-6 rounded-full border border-rose-400/50 shadow-[0_0_20px_rgba(225,29,72,0.4)] transition-all hover:scale-105 active:scale-95 uppercase tracking-widest text-xs"
-                        >
-                            🛡️ Execute System Repair
-                        </Button>
+                        {onRepair && (
+                            <Button 
+                                onClick={onRepair}
+                                className="bg-rose-600 hover:bg-rose-500 text-white font-black px-8 py-6 rounded-full border border-rose-400/50 shadow-[0_0_20px_rgba(225,29,72,0.4)] transition-all hover:scale-105 active:scale-95 uppercase tracking-widest text-xs"
+                            >
+                                🛡️ Execute System Repair
+                            </Button>
+                        )}
                     </div>
                 </DialogHeader>
 
