@@ -142,7 +142,7 @@ function App() {
                     {/* Column 2 & 3: Map & Risk (Middle) */}
                     <div className="lg:col-span-2 relative bg-slate-900/50 rounded-xl border border-slate-800 overflow-hidden group">
                         <div className="absolute inset-0 bg-grid-slate-800/50 [mask-image:linear-gradient(0deg,white,rgba(255,255,255,0.6))] pointer-events-none" />
-                        <MapView transactions={transactions} />
+                        <MapView transactions={transactions} selectedTransaction={selectedTransaction} />
 
                         {/* Risk Gauge Overlay */}
                         <div className="absolute top-4 left-4 z-[400]">

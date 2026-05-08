@@ -1,5 +1,5 @@
-import React from 'react';
-import { MapContainer, TileLayer, Marker, Popup, Polyline } from 'react-leaflet';
+import React, { useEffect } from 'react';
+import { MapContainer, TileLayer, Marker, Popup, Polyline, useMap } from 'react-leaflet';
 import 'leaflet/dist/leaflet.css';
 import L from 'leaflet';
 
@@ -30,7 +30,20 @@ const safeIcon = new L.Icon({
   shadowSize: [41, 41]
 });
 
-export default function MapView({ transactions }) {
+function MapUpdater({ selectedTransaction }) {
+  const map = useMap();
+  useEffect(() => {
+    if (selectedTransaction?.lat && selectedTransaction?.lon) {
+      map.flyTo([selectedTransaction.lat, selectedTransaction.lon], 6, {
+        animate: true,
+        duration: 1.5
+      });
+    }
+  }, [selectedTransaction, map]);
+  return null;
+}
+
+export default function MapView({ transactions, selectedTransaction }) {
   // Group transactions by user to find jumps
   const userPaths = {};
   transactions.forEach(tx => {
@@ -57,6 +70,8 @@ export default function MapView({ transactions }) {
           attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors &copy; <a href="https://carto.com/attributions">CARTO</a>'
           url="https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png"
         />
+        
+        <MapUpdater selectedTransaction={selectedTransaction} />
 
         {transactions.map((tx) => (
           <Marker

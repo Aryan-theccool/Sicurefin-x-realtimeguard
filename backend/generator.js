@@ -88,8 +88,8 @@ const generateTransaction = (forceFraud = false) => {
     ip: generateIP(),
 
     // Flattened location for Frontend
-    lat: loc.lat,
-    lon: loc.lon,
+    lat: loc.lat + (Math.random() * 0.1 - 0.05),
+    lon: loc.lon + (Math.random() * 0.1 - 0.05),
     location: `${loc.city}, ${loc.country}`,
 
     user_id: user, // New field for Geo-Jumps
