@@ -48,6 +48,22 @@ export default function AuditLog({ isOpen, onClose }) {
         }
     };
 
+    const simulateAttack = async () => {
+        try {
+            const res = await fetch(`${ENDPOINTS.ACTION.replace('/api/action', '')}/api/blockchain/simulate-attack`, {
+                method: 'POST'
+            });
+            const data = await res.json();
+            if (data.success) {
+                alert("😈 Attack Simulated! Close this log to see the alert.");
+            } else {
+                alert("❌ Attack failed: " + data.error);
+            }
+        } catch (e) {
+            alert("Error simulating attack: " + e.message);
+        }
+    };
+
     if (!isOpen) return null;
 
     return (
@@ -70,6 +86,12 @@ export default function AuditLog({ isOpen, onClose }) {
                             <ShieldAlert className="text-emerald-400" /> Blockchain Audit Log
                         </h2>
                         <div className="flex items-center gap-4">
+                            <button
+                                onClick={simulateAttack}
+                                className="text-[10px] uppercase font-bold tracking-widest text-red-500 hover:text-red-400 px-3 py-1 hover:bg-red-500/10 rounded transition-colors"
+                            >
+                                Simulate Attack
+                            </button>
                             <button
                                 onClick={verifyChain}
                                 disabled={verifying}
