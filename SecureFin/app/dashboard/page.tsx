@@ -53,7 +53,8 @@ export default function DashboardPage() {
     React.useEffect(() => {
         if (role !== 'admin') return;
 
-        const ws = new WebSocket('ws://localhost:4000');
+        const wsUrl = process.env.NEXT_PUBLIC_WS_URL || 'ws://localhost:4000';
+        const ws = new WebSocket(wsUrl);
         ws.onmessage = (event) => {
             try {
                 const message = JSON.parse(event.data);
@@ -90,21 +91,24 @@ export default function DashboardPage() {
 
     const handleSimulateAttack = async () => {
         try {
-            await fetch('http://localhost:4000/api/blockchain/simulate-attack', { method: 'POST' });
+            const baseUrl = process.env.NEXT_PUBLIC_API_URL || 'http://localhost:4000';
+            await fetch(`${baseUrl}/api/blockchain/simulate-attack`, { method: 'POST' });
+            alert('Attack simulation triggered');
         } catch (e) {
-            console.error('Failed to simulate attack');
+            console.error('Failed to trigger simulation', e);
         }
-    }
+    };
 
     const handleRestoreChain = async () => {
         try {
-            await fetch('http://localhost:4000/api/blockchain/restore', { method: 'POST' });
-            setIsTamperModalOpen(false);
+            const baseUrl = process.env.NEXT_PUBLIC_API_URL || 'http://localhost:4000';
+            await fetch(`${baseUrl}/api/blockchain/restore`, { method: 'POST' });
+            alert('Chain restored successfully');
             setTamperData(null);
         } catch (e) {
-            console.error('Failed to restore chain');
+            console.error('Failed to restore chain', e);
         }
-    }
+    };
 
     const handleAddExpense = (newExpense: any) => {
         setExpenses(prev => [{

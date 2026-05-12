@@ -22,7 +22,7 @@ export default function RealtimeGuardPage() {
     const [isTamperModalOpen, setIsTamperModalOpen] = useState(false)
 
     useEffect(() => {
-        const wsUrl = 'ws://localhost:4000';
+        const wsUrl = process.env.NEXT_PUBLIC_WS_URL || 'ws://localhost:4000';
         const ws = new WebSocket(wsUrl);
 
         ws.onopen = () => {
@@ -63,21 +63,22 @@ export default function RealtimeGuardPage() {
 
     const handleSimulateAttack = async () => {
         try {
-            await fetch('http://localhost:4000/api/blockchain/simulate-attack', { method: 'POST' });
+            const baseUrl = process.env.NEXT_PUBLIC_API_URL || 'http://localhost:4000';
+            await fetch(`${baseUrl}/api/blockchain/simulate-attack`, { method: 'POST' });
         } catch (e) {
-            console.error('Failed to simulate');
+            console.error('Failed to simulate attack');
         }
-    }
+    };
 
     const handleRestoreChain = async () => {
         try {
-            await fetch('http://localhost:4000/api/blockchain/restore', { method: 'POST' });
-            setIsTamperModalOpen(false);
+            const baseUrl = process.env.NEXT_PUBLIC_API_URL || 'http://localhost:4000';
+            await fetch(`${baseUrl}/api/blockchain/restore`, { method: 'POST' });
             setTamperData(null);
         } catch (e) {
-            console.error('Failed to restore');
+            console.error('Failed to restore chain');
         }
-    }
+    };
 
     const fraudCount = transactions.filter(t => t.fraud_score > 80).length;
 

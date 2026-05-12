@@ -38,7 +38,8 @@ export function AuditLog({ isOpen, onClose }: AuditLogProps) {
     const fetchLogs = async () => {
         setLoading(true);
         try {
-            const res = await fetch('http://localhost:4000/api/actions');
+            const baseUrl = process.env.NEXT_PUBLIC_API_URL || 'http://localhost:4000';
+            const res = await fetch(`${baseUrl}/api/actions`);
             const data = await res.json();
             setLogs(data);
         } catch (e) {
@@ -51,7 +52,8 @@ export function AuditLog({ isOpen, onClose }: AuditLogProps) {
     const verifyChain = async () => {
         setVerifying(true);
         try {
-            const res = await fetch('http://localhost:4000/api/blockchain/verify');
+            const baseUrl = process.env.NEXT_PUBLIC_API_URL || 'http://localhost:4000';
+            const res = await fetch(`${baseUrl}/api/blockchain/verify`);
             const data = await res.json();
             if (data.valid) {
                 alert(`✅ Blockchain Integrity Verified!\nChain Length: ${data.chainLength} Blocks`);
@@ -62,6 +64,23 @@ export function AuditLog({ isOpen, onClose }: AuditLogProps) {
             alert("Verification failed: " + e.message);
         } finally {
             setVerifying(false);
+        }
+    };
+
+    const simulateAttack = async () => {
+        try {
+            const baseUrl = process.env.NEXT_PUBLIC_API_URL || 'http://localhost:4000';
+            const res = await fetch(`${baseUrl}/api/blockchain/simulate-attack`, {
+                method: 'POST'
+            });
+            const data = await res.json();
+            if (data.success) {
+                alert("😈 Attack Simulated! Close this log to see the alert.");
+            } else {
+                alert("❌ Attack failed: " + data.error);
+            }
+        } catch (e: any) {
+            alert("Error simulating attack: " + e.message);
         }
     };
 
@@ -77,16 +96,26 @@ export function AuditLog({ isOpen, onClose }: AuditLogProps) {
                             </DialogTitle>
                             <p className="text-[10px] text-slate-500 font-bold tracking-[0.2em] mt-1">CRYPTOGRAPHIC AUDIT TRAIL • SECURE_NODE_01</p>
                         </div>
-                        <Button
-                            variant="outline"
-                            size="sm"
-                            onClick={verifyChain}
-                            disabled={verifying}
-                            className="bg-emerald-500/10 text-emerald-400 border-emerald-500/20 hover:bg-emerald-500/20 rounded-full px-6 font-bold"
-                        >
-                            {verifying ? <Loader2 className="h-4 w-4 animate-spin mr-2" /> : <Lock className="h-4 w-4 mr-2" />}
-                            Verify Chain
-                        </Button>
+                        <div className="flex gap-3">
+                            <Button
+                                variant="ghost"
+                                size="sm"
+                                onClick={simulateAttack}
+                                className="text-[10px] uppercase font-bold tracking-widest text-rose-500 hover:bg-rose-500/10 hover:text-rose-400"
+                            >
+                                Simulate External Attack
+                            </Button>
+                            <Button
+                                variant="outline"
+                                size="sm"
+                                onClick={verifyChain}
+                                disabled={verifying}
+                                className="bg-emerald-500/10 text-emerald-400 border-emerald-500/20 hover:bg-emerald-500/20 rounded-full px-6 font-bold"
+                            >
+                                {verifying ? <Loader2 className="h-4 w-4 animate-spin mr-2" /> : <Lock className="h-4 w-4 mr-2" />}
+                                Verify Chain
+                            </Button>
+                        </div>
                     </div>
                 </DialogHeader>
 
