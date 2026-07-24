@@ -310,8 +310,8 @@ WS_TOKEN=your_secure_token_here
 PORT=4000
 ENABLE_MOCK_DATA=true
 FRONTEND_URL=https://realtimeguard.vercel.app
-SLACK_WEBHOOK_URL=https://hooks.slack.com/services/T00000000/B00000000/XXXXXXXXXXXXXXXXXXXXXXXX
-WS_TOKEN=sk_live_abc123def456
+SLACK_WEBHOOK_URL=                          # Optional: your Slack webhook URL
+WS_TOKEN=your_secure_token_here
 DATABASE_URL=postgresql://user:pass@db.host:5432/realtimeguard
 ```
 
