@@ -106,7 +106,7 @@ FRONTEND_URL=http://localhost:5173
 ### For Production
 ```env
 FRONTEND_URL=https://your-domain.vercel.app
-SLACK_WEBHOOK_URL=https://hooks.slack.com/services/YOUR/WEBHOOK
+SLACK_WEBHOOK_URL=                          # Optional: your Slack webhook
 ```
 
 ---
