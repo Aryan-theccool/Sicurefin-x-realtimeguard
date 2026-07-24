@@ -1,7 +1,54 @@
-# Root gitignore
-node_modules
+# Dependencies
+node_modules/
+package-lock.json
+yarn.lock
+
+# Environment & Secrets
 .env
-dist
-build
+.env.local
+.env.*.local
+.env.production
+
+# Build outputs
+dist/
+build/
+*.min.js
+*.min.css
+
+# Database & Data
+*.db
+*.sqlite
 *.log
+data/*.json
+
+# IDE & Editor
+.vscode/
+.idea/
+*.swp
+*.swo
+*.sublime-*
 .DS_Store
+Thumbs.db
+
+# OS
+.DS_Store
+.AppleDouble
+.LSOverride
+desktop.ini
+
+# Development
+.next/
+.vercel/
+.nuxt/
+coverage/
+.nyc_output/
+
+# Temporary files
+tmp/
+temp/
+*.tmp
+
+# Backup files
+*.bak
+*.backup
+*~
