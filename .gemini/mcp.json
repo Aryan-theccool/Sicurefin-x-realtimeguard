@@ -1,0 +1,24 @@
+{
+  "mcpServers": {
+    "netlify": {
+      "command": "npx",
+      "args": [
+        "-y",
+        "@netlify/mcp-server"
+      ],
+      "env": {
+        "NETLIFY_AUTH_TOKEN": "YOUR_NETLIFY_TOKEN_HERE"
+      }
+    },
+    "vercel": {
+      "command": "npx",
+      "args": [
+        "-y",
+        "vercel-mcp-server"
+      ],
+      "env": {
+        "VERCEL_TOKEN": "YOUR_VERCEL_TOKEN_HERE"
+      }
+    }
+  }
+}
